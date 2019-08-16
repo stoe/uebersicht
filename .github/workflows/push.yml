@@ -20,7 +20,7 @@ jobs:
       - uses: actions/setup-node@master
         with:
           version: ${{ matrix.node }}
-      - run: npm install -g 
+      - run: npm install -g lerna
       - run: yarn global add
       - run: yarn install
       - run: lerna run test
