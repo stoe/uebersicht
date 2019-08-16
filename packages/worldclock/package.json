@@ -29,7 +29,9 @@
     "npm": ">=6.9",
     "yarn": ">=1.17"
   },
-  "scripts": {},
+  "scripts": {
+    "test": "eslint '*.jsx'"
+  },
   "dependencies": {
     "moment-timezone": "^0.5.26"
   },

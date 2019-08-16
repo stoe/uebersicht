@@ -1,12 +1,11 @@
+/* global React */
 import {styled, css} from 'uebersicht'
 
 const moment = require('moment')
 
 export const refreshFrequency = 30000 // Use ms (every 30 seconds)
 
-export const command = dispatch => {}
-
-export const render = ({items, error}) => {
+export const render = ({error}) => {
   const [myDate, myTime] = moment()
     .format('DD.MM.YYYY HH:mm')
     .split(' ')

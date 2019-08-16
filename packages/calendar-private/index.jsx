@@ -1,3 +1,4 @@
+/* global React */
 import {css, styled} from 'uebersicht'
 
 export const refreshFrequency = 300000 // Use ms (every 5 Minutes)
@@ -7,10 +8,10 @@ export const initialState = {output: false}
 
 /**
  * NOTE
- * ⚠ Workaround to execute another Node.js file
+ * ⚠ Workaround to execute another Node.js file.
  *
  * `calendar` does not have a `.js` extension
- * to prevent Übersicht from loading it as a widget
+ * to prevent Übersicht from loading it as a widget.
  */
 export const command = '/usr/local/bin/node uebersicht-calendar-private.widget/calendar'
 
@@ -50,6 +51,7 @@ export const render = ({items, error}) => {
     return (
       <Calendar>
         {items.map(({date, time, event}, idx) => (
+          // eslint-disable-next-line react/no-array-index-key
           <CalendarItem key={idx}>
             <CalendarDate>{date}</CalendarDate>
             <CalendarTime>{time === '24:00' ? 'all day' : time}</CalendarTime>

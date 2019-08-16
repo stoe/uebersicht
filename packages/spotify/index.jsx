@@ -1,3 +1,4 @@
+/* global React */
 import {styled, css} from 'uebersicht'
 
 export const refreshFrequency = 2000 // Use ms (every 2 seconds)
@@ -18,6 +19,7 @@ export const updateState = (event, prev) => {
 
   switch (event.type) {
     case 'UB/COMMAND_RAN':
+      // eslint-disable-next-line no-case-declarations
       const [spotifyArtist, spotifyTitle] = event.output.split('|')
 
       return {

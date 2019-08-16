@@ -1,8 +1,11 @@
 {
   "extends": ["plugin:github/es6", "plugin:github/node", "plugin:github/react"],
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
-    }
+  "rules": {
+    "eslint-comments/no-use": [
+      "error",
+      {
+        "allow": ["global", "eslint-disable-next-line"]
+      }
+    ]
   }
 }

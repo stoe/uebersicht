@@ -1,55 +1,52 @@
-import { styled, css } from "uebersicht";
+/* global React */
+import {styled, css} from 'uebersicht'
 
-const moment = require("moment-timezone");
+const moment = require('moment-timezone')
 
 const list = [
-  { city: "San Francisco", tz: "US/Pacific" },
-  { city: "Salt Lake City", tz: "US/Mountain" },
-  { city: "Austin", tz: "US/Central" },
-  { city: "New York", tz: "US/Eastern" },
-  { city: "London", tz: "Europe/London" },
-  { city: "Ichenhausen", tz: "Europe/Berlin" },
-  { city: "Sydney", tz: "Australia/Sydney" }
-];
+  {city: 'San Francisco', tz: 'US/Pacific'},
+  {city: 'Salt Lake City', tz: 'US/Mountain'},
+  {city: 'Austin', tz: 'US/Central'},
+  {city: 'New York', tz: 'US/Eastern'},
+  {city: 'London', tz: 'Europe/London'},
+  {city: 'Ichenhausen', tz: 'Europe/Berlin'},
+  {city: 'Sydney', tz: 'Australia/Sydney'}
+]
 
-export const refreshFrequency = 30000; // Use ms (every 30 seconds)
-
-export const command = dispatch => {};
+export const refreshFrequency = 30000 // Use ms (every 30 seconds)
 
 export const render = () => {
-  const now = moment();
+  const now = moment()
 
   const items = list.map(item => {
-    const { city, tz } = item;
+    const {city, tz} = item
 
     const [date, time, timezone] = now
       .tz(tz)
-      .format("DD.MM HH:mm z")
-      .split(" ");
+      .format('DD.MM HH:mm z')
+      .split(' ')
 
     return {
       city,
       date,
       time,
       timezone
-    };
-  });
+    }
+  })
 
-  return (
-    items.map(item => (
-      <WorldClockContainer key={item.city}>
-        <div className={city}>{item.city}</div>
-        <div className={timeblock}>
-          <div className={time}>{item.time}</div>
-          <div className={info}>
-            <span className={date}>{item.date}</span>
-            <span className={timezone}>{item.timezone}</span>
-          </div>
+  return items.map(item => (
+    <WorldClockContainer key={item.city}>
+      <div className={city}>{item.city}</div>
+      <div className={timeblock}>
+        <div className={time}>{item.time}</div>
+        <div className={info}>
+          <span className={date}>{item.date}</span>
+          <span className={timezone}>{item.timezone}</span>
         </div>
-      </WorldClockContainer>
-    ))
-  );
-};
+      </div>
+    </WorldClockContainer>
+  ))
+}
 
 // Styling...
 export const className = css`
@@ -59,33 +56,33 @@ export const className = css`
   left: 2em;
   top: 6em;
   min-width: 200px;
-`;
+`
 
-const WorldClockContainer = styled("div")`
+const WorldClockContainer = styled('div')`
   display: flex;
   flex-direction: column;
 
   margin-bottom: 8px;
-`;
+`
 
 export const city = css`
   flex-grow: 2;
 
   font-size: 1em;
-`;
+`
 
 export const timeblock = css`
   flex-grow: 2;
   flex-direction: row;
   display: inline-flex;
-`;
+`
 
 export const time = css`
   font-size: 2em;
   flex-grow: 1;
 
   color: #f5f5f596;
-`;
+`
 
 export const info = css`
   display: inline-flex;
@@ -94,8 +91,8 @@ export const info = css`
   flex-grow: 10;
 
   font-size: 0.6em;
-`;
+`
 
-export const date = css``;
+export const date = css``
 
-export const timezone = css``;
+export const timezone = css``

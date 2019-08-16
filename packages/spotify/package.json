@@ -29,7 +29,9 @@
     "npm": ">=6.9",
     "yarn": ">=1.17"
   },
-  "scripts": {},
+  "scripts": {
+    "test": "eslint '*.jsx'"
+  },
   "resolutions": {
     "eslint-scope": ">=3.7.1"
   }

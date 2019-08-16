@@ -29,7 +29,9 @@
     "npm": ">=6.9",
     "yarn": ">=1.17"
   },
-  "scripts": {},
+  "scripts": {
+    "test": "eslint '*.jsx'"
+  },
   "dependencies": {
     "googleapis": "^42.0.0",
     "moment": "^2.24.0"
