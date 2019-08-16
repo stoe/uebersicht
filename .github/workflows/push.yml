@@ -1,4 +1,4 @@
-name: Test and publish
+if name: Test and publish
 
 on:
   pull_request:
@@ -20,8 +20,8 @@ jobs:
       - uses: actions/setup-node@master
         with:
           version: ${{ matrix.node }}
-      - run: npm install -g lerna
-      - run: yarn global add
+      - run: npm install -g yarn
+      - run: yarn global add lerna
       - run: yarn install
       - run: lerna run test
 
