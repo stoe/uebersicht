@@ -1,6 +1,7 @@
 # uebersicht-worldclock
-A world clock for Übersicht (http://tracesof.net/uebersicht/)
 
+> A worldclock widget for http://tracesof.net/uebersicht
 
-## License [![license](https://img.shields.io/github/license/stoe/ghe-playbooks.svg)](https://github.com/stoe/ghe-playbooks/blob/master/license)
+## License
+
 MIT © [Stefan Stölzle](https://github.com/stoe)
