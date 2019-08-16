@@ -1,0 +1,42 @@
+name: Test and publish
+
+on:
+  pull_request:
+    branches:
+      - master
+  push:
+    branches:
+      - master
+
+jobs:
+  test:
+    runs-on: macos-10.14
+    strategy:
+      matrix:
+        node: [ '10', '12' ]
+    name: Test on Node v${{ matrix.node }}
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@master
+        with:
+          version: ${{ matrix.node }}
+      - run: npm install -g yarn
+      - run: yarn install
+      - run: lerna run test
+
+  publish:
+    needs: [ test ]
+    runs-on: ubuntu-latest
+    name: Publish
+    steps:
+      - uses: actions/checkout@master
+        with:
+          version: 10.x
+      - uses: actions/setup-node@master
+        with:
+          registry-url: 'https://npm.pkg.github.com'
+      - run: npm install -g lerna
+      - run: lerna publish from-package --yes
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        if: github.event_name == 'push'

@@ -1,0 +1,27 @@
+{
+  "name": "root",
+  "private": true,
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "engines": {
+    "node": ">=10.16",
+    "npm": ">=6.9",
+    "yarn": ">=1.17"
+  },
+  "scripts": {
+    "lint": "github-lint",
+    "pretest": "npm run lint"
+  },
+  "dependencies": {
+    "@stoe/uebersicht-calendar": "file:packages/calendar",
+    "@stoe/uebersicht-calendar-private": "file:packages/calendar-private",
+    "@stoe/uebersicht-simpleclock": "file:packages/simpleclock",
+    "@stoe/uebersicht-spotify": "file:packages/spotify",
+    "@stoe/uebersicht-worldclock": "file:packages/worldclock"
+  },
+  "devDependencies": {
+    "lerna": "^3.16.4"
+  },
+  "resolutions": {}
+}

@@ -1,0 +1,8 @@
+{
+  "extends": ["plugin:github/es6", "plugin:github/node", "plugin:github/react"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  }
+}

@@ -1,0 +1,117 @@
+/* @flow */
+import {css, styled} from 'uebersicht'
+
+export const refreshFrequency = 300000 // Use ms (every 5 Minutes)
+
+// NOTE: ⚠ Workaround to hide initial load
+export const initialState = {output: false}
+
+/**
+ * NOTE
+ * ⚠ Workaround to execute another Node.js file
+ *
+ * `calendar` does not have a `.js` extension
+ * to prevent Übersicht from loading it as a widget
+ */
+export const command = '/usr/local/bin/node uebersicht-calendar.widget/calendar'
+
+export const updateState = (event, prev) => {
+  if (event.error) {
+    return {...prev, error: `We got an error: ${event.error}`}
+  }
+
+  switch (event.type) {
+    case 'UB/COMMAND_RAN':
+      try {
+        return {
+          items: JSON.parse(event.output) || []
+        }
+      } catch (error) {
+        // console.error(error);
+        return {
+          items: []
+        }
+      }
+    default:
+      return prev
+  }
+}
+
+export const render = ({items, error}) => {
+  if (error) {
+    return (
+      <Error>
+        Something went wrong: <strong>{String(error)}</strong>
+      </Error>
+    )
+  }
+
+  // NOTE: ⚠ Workaround to hide initial load
+  if (items) {
+    return (
+      <Calendar>
+        {items.map(({date, time, event}, idx) => (
+          <CalendarItem key={idx}>
+            <CalendarDate>{date}</CalendarDate>
+            <CalendarTime>{time === '24:00' ? 'all day' : time}</CalendarTime>
+            {time === '24:00' ? (
+              <CalendarAllDayEvent>{event}</CalendarAllDayEvent>
+            ) : (
+              <CalendarEvent>{event}</CalendarEvent>
+            )}
+          </CalendarItem>
+        ))}
+      </Calendar>
+    )
+  } else {
+    return 'loading...'
+  }
+}
+
+// Styling...
+export const className = css`
+  font: normal normal 100 0.96em/1.28 -apple-system, Helvetica Neue;
+
+  font-weight: 100;
+  color: #f5f5f532;
+  left: 2em;
+  bottom: 2em;
+`
+
+export const Error = styled('div')`
+  font-size: 2em;
+  color: #ff0000;
+  margin: 0;
+`
+
+const Calendar = styled('ul')`
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+`
+
+const CalendarItem = styled('li')`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  line-height: 1.28em;
+`
+
+const CalendarDate = styled('span')`
+  min-width: 3em;
+`
+
+const CalendarTime = styled('span')`
+  margin: 0 1em;
+  min-width: 3em;
+`
+
+const CalendarEvent = styled('span')`
+  flex-grow: 10;
+  color: #f5f5f596;
+`
+
+const CalendarAllDayEvent = styled('span')`
+  flex-grow: 10;
+  color: #f5f5f532;
+`

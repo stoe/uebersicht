@@ -1,0 +1,36 @@
+{
+  "name": "@stoe/uebersicht-spotify",
+  "version": "0.0.0",
+  "description": "A 'now playing' on Spotify widget for http://tracesof.net/uebersicht",
+  "keywords": [
+    "uebersicht",
+    "widget",
+    "spotify"
+  ],
+  "author": {
+    "name": "Stefan Stölzle",
+    "email": "stefan@stoelzle.me",
+    "url": "https://github.com/stoe"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/stoe/uebersicht#readme",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/stoe/uebersicht.git"
+  },
+  "bugs": {
+    "url": "https://github.com/stoe/uebersicht/issues"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "engines": {
+    "node": ">=10.16",
+    "npm": ">=6.9",
+    "yarn": ">=1.17"
+  },
+  "scripts": {},
+  "resolutions": {
+    "eslint-scope": ">=3.7.1"
+  }
+}

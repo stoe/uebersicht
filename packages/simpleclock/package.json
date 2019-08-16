@@ -1,0 +1,39 @@
+{
+  "name": "@stoe/uebersicht-simpleclock",
+  "version": "0.0.0",
+  "description": "A simple clock widget for http://tracesof.net/uebersicht",
+  "keywords": [
+    "uebersicht",
+    "widget",
+    "clock"
+  ],
+  "author": {
+    "name": "Stefan Stölzle",
+    "email": "stefan@stoelzle.me",
+    "url": "https://github.com/stoe"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/stoe/uebersicht#readme",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/stoe/uebersicht.git"
+  },
+  "bugs": {
+    "url": "https://github.com/stoe/uebersicht/issues"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "engines": {
+    "node": ">=10.16",
+    "npm": ">=6.9",
+    "yarn": ">=1.17"
+  },
+  "scripts": {},
+  "dependencies": {
+    "moment": "^2.24.0"
+  },
+  "resolutions": {
+    "eslint-scope": ">=3.7.1"
+  }
+}
