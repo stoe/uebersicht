@@ -3,7 +3,10 @@ import {styled, css} from 'uebersicht'
 
 const moment = require('moment')
 
-export const refreshFrequency = 30000 // Use ms (every 30 seconds)
+export const refreshFrequency = 1000 // Use ms (every seconds)
+
+// eslint-disable-next-line no-unused-vars
+export const command = dispatch => {}
 
 export const render = ({error}) => {
   const [myDate, myTime] = moment()
