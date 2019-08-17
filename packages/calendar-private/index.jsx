@@ -6,14 +6,7 @@ export const refreshFrequency = 300000 // Use ms (every 5 Minutes)
 // NOTE: ⚠ Workaround to hide initial load
 export const initialState = {output: false}
 
-/**
- * NOTE
- * ⚠ Workaround to execute another Node.js file.
- *
- * `calendar` does not have a `.js` extension
- * to prevent Übersicht from loading it as a widget.
- */
-export const command = '/usr/local/bin/node uebersicht-calendar-private.widget/calendar'
+export const command = '/usr/local/bin/node uebersicht-calendar-private.widget/lib/calendar.js'
 
 export const updateState = (event, prev) => {
   if (event.error) {
