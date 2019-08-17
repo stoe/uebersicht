@@ -1,4 +1,4 @@
-if name: Test and publish
+name: Test and publish
 
 on:
   pull_request:
@@ -22,7 +22,7 @@ jobs:
           version: ${{ matrix.node }}
       - run: npm install -g yarn
       - run: yarn global add lerna
-      - run: yarn install
+      - run: yarn install --ignore-scripts
       - run: lerna run test
 
   publish:
