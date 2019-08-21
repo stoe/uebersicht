@@ -1,6 +1,5 @@
 /* eslint-disable camelcase */
 /* eslint-disable no-console */
-
 'use strict'
 
 const fs = require('fs')
@@ -33,12 +32,10 @@ fs.readFile(CREDENTIALS_PATH, (err, content) => {
   authorize(JSON.parse(content), listEvents)
 })
 
-/**
- * Create an OAuth2 client with the given credentials, and then execute the
- * given callback function.
- * @param {Object} credentials The authorization client credentials.
- * @param {function} callback The callback to call with the authorized client.
- */
+// Create an OAuth2 client with the given credentials, and then execute the
+// given callback function.
+// @param {Object} credentials The authorization client credentials.
+// @param {function} callback The callback to call with the authorized client.
 function authorize(credentials, callback) {
   const {client_secret, client_id, redirect_uris} = credentials.installed
   const oAuth2Client = new google.auth.OAuth2(client_id, client_secret, redirect_uris[0])
@@ -51,12 +48,10 @@ function authorize(credentials, callback) {
   })
 }
 
-/**
- * Get and store new token after prompting for user authorization, and then
- * execute the given callback with the authorized OAuth2 client.
- * @param {google.auth.OAuth2} oAuth2Client The OAuth2 client to get token for.
- * @param {getEventsCallback} callback The callback for the authorized client.
- */
+// Get and store new token after prompting for user authorization, and then
+// execute the given callback with the authorized OAuth2 client.
+// @param {google.auth.OAuth2} oAuth2Client The OAuth2 client to get token for.
+// @param {getEventsCallback} callback The callback for the authorized client.
 function getAccessToken(oAuth2Client, callback) {
   const authUrl = oAuth2Client.generateAuthUrl({
     access_type: 'offline',
@@ -82,53 +77,41 @@ function getAccessToken(oAuth2Client, callback) {
   })
 }
 
-/**
- * Lists the next 10 events on the user's primary calendar.
- * @param {google.auth.OAuth2} auth An authorized OAuth2 client.
- */
+// Lists the next 10 events on the user's primary calendar.
+// @param {google.auth.OAuth2} auth An authorized OAuth2 client.
 function listEvents(auth) {
   const calendar = google.calendar({version: 'v3', auth})
   calendar.events.list(
     {
       calendarId: 'primary',
       timeMin: new Date().toISOString(),
+      maxResults: 5,
       singleEvents: true,
       orderBy: 'startTime',
       showDeleted: false,
       showHiddenInvitations: false
     },
     (err, res) => {
-      if (err) return console.log('The API returned an error: ' + err)
+      if (err) return console.log(`The API returned an error: ${err}`)
       const events = res.data.items
       if (events.length) {
         const data = []
-
         events.map(event => {
-          if (data.length < 5) {
-            const start = event.start.dateTime || event.start.date
-            const {htmlLink: href, status, attendees} = event
+          const start = event.start.dateTime || event.start.date
+          const {htmlLink: href, status} = event
 
-            if (attendees) {
-              for (const attendee of attendees) {
-                if (attendee.self && attendee.responseStatus === 'declined') {
-                  event.declined = true
-                }
-              }
-            }
+          if (event.summary) {
+            const [date, time] = moment(start)
+              .format('MM/DD kk:mm')
+              .split(' ')
 
-            if (event.summary && event.declined !== true) {
-              const [date, time] = moment(start)
-                .format('MM/DD kk:mm')
-                .split(' ')
-
-              data.push({
-                date,
-                time,
-                event: event.summary,
-                href,
-                status
-              })
-            }
+            data.push({
+              date,
+              time,
+              event: event.summary,
+              href,
+              status
+            })
           }
         })
 

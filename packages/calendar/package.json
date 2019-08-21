@@ -1,6 +1,6 @@
 {
   "name": "@stoe/uebersicht-calendar",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A calendar widget for http://tracesof.net/uebersicht",
   "keywords": [
     "uebersicht",
