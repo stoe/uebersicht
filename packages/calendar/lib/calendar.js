@@ -68,8 +68,8 @@ function getAccessToken(oAuth2Client, callback) {
       if (err) return console.error('Error retrieving access token', err)
       oAuth2Client.setCredentials(token)
       // Store the token to disk for later program executions
-      fs.writeFile(TOKEN_PATH, JSON.stringify(token), err => {
-        if (err) console.error(err)
+      fs.writeFile(TOKEN_PATH, JSON.stringify(token), error => {
+        if (error) console.error(error)
         console.log('Token stored to', TOKEN_PATH)
       })
       callback(oAuth2Client)
