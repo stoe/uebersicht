@@ -56,9 +56,7 @@ export const render = ({output, error}) => {
 
 // Styling...
 export const className = css`
-  font-family: -apple-system, Helvetica Neue;
-  font-size: 0.64em;
-  color: #f5f5f532;
+  font: normal normal 100 0.64em/1.28 -apple-system, Helvetica Neue;
   right: 2em;
   bottom: 2em;
   min-width: 200px;
@@ -75,12 +73,12 @@ export const Error = styled('div')`
 export const Spotify = styled('div')`
   font-size: 2.5em;
   font-weight: 100;
-  color: #f5f5f550;
+  color: #f5f5f5;
   margin: 0;
 `
 
 export const SpotifyIcon = styled('svg')`
-  color: #1db95450;
+  color: #1db95464;
   fill: currentColor;
   height: 0.75em;
   margin-right: 0.32em;
@@ -92,5 +90,5 @@ export const title = css`
 `
 
 export const artist = css`
-  color: #f5f5f525;
+  color: #f5f5f532;
 `
