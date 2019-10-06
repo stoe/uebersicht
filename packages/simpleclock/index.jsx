@@ -28,7 +28,7 @@ export const render = ({error}) => {
 // Styling...
 export const className = css`
   font: normal normal 100 0.96em/1.28 -apple-system, Helvetica Neue;
-  color: #f5f5f564;
+  color: #f6e37664;
   left: 2em;
   top: 2em;
   min-width: 200px;
@@ -46,6 +46,6 @@ export const time = css`
 export const date = css`
   font-size: 0.32em;
   font-weight: 100;
-  color: #f5f5f564;
+  color: #f6e37664;
   margin-left: 0.75em;
 `
