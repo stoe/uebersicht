@@ -66,14 +66,14 @@ export const className = css`
 
 export const Error = styled('div')`
   font-size: 1em;
-  color: #ff0000;
+  color: #9c1c23;
   margin: 0;
 `
 
 export const Spotify = styled('div')`
   font-size: 2.5em;
   font-weight: 100;
-  color: #f5f5f5;
+  color: #a0a0a0;
   margin: 0;
 `
 
@@ -90,5 +90,5 @@ export const title = css`
 `
 
 export const artist = css`
-  color: #f5f5f532;
+  color: #6d6d6d64;
 `

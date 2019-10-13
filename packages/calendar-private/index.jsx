@@ -67,17 +67,17 @@ export const className = css`
   font: normal normal 100 0.96em/1.28 -apple-system, Helvetica Neue;
 
   font-weight: 100;
-  color: #f5f5f532;
+  color: #6d6d6d64;
   left: 2em;
   bottom: 9em;
   padding-bottom: 0.96em;
 
-  border-bottom: 1px solid #f5f5f564;
+  border-bottom: 1px solid #6d6d6d64;
 `
 
 export const Error = styled('div')`
   font: normal normal 100 0.96em/1.28 -apple-system, Helvetica Neue;
-  color: #ff0000;
+  color: #9c1c23;
   margin: 0;
 `
 
@@ -105,10 +105,9 @@ const CalendarTime = styled('span')`
 
 const CalendarEvent = styled('span')`
   flex-grow: 10;
-  color: #f5f5f5;
+  color: #a0a0a0;
 `
 
 const CalendarAllDayEvent = styled('span')`
   flex-grow: 10;
-  color: #f5f5f564;
 `
