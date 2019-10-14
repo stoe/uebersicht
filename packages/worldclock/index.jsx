@@ -54,7 +54,7 @@ export const render = () => {
 // Styling...
 export const className = css`
   font: normal normal 100 0.96em/1.28 -apple-system, Helvetica Neue;
-  color: #6d6d6d64;
+  color: #9a9a9a64;
   left: 2em;
   top: 6em;
   min-width: 200px;
@@ -83,7 +83,7 @@ export const time = css`
   font-size: 2em;
   flex-grow: 1;
 
-  color: #a0a0a0;
+  color: #fff;
 `
 
 export const info = css`

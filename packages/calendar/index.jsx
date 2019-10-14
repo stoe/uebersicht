@@ -67,7 +67,7 @@ export const className = css`
   font: normal normal 100 0.96em/1.28 -apple-system, Helvetica Neue;
 
   font-weight: 100;
-  color: #6d6d6d64;
+  color: #9a9a9a64;
   left: 2em;
   bottom: 2em;
 `
@@ -102,7 +102,7 @@ const CalendarTime = styled('span')`
 
 const CalendarEvent = styled('span')`
   flex-grow: 10;
-  color: #a0a0a0;
+  color: #fff;
 `
 
 const CalendarAllDayEvent = styled('span')`

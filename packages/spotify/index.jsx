@@ -73,7 +73,7 @@ export const Error = styled('div')`
 export const Spotify = styled('div')`
   font-size: 2.5em;
   font-weight: 100;
-  color: #a0a0a0;
+  color: #fff;
   margin: 0;
 `
 
@@ -90,5 +90,5 @@ export const title = css`
 `
 
 export const artist = css`
-  color: #6d6d6d64;
+  color: #9a9a9a64;
 `
