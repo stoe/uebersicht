@@ -12,15 +12,9 @@ const SCOPES = ['https://www.googleapis.com/auth/calendar.readonly']
 
 // The file token.json stores the user's access and refresh tokens,
 // and is created automatically when the authorization flow completes for the first time.
-const TOKEN_PATH = path
-  .join(process.env.PWD, 'uebersicht-calendar.widget', 'token.json')
-  // NOTE: ⚠ Workaround so we can run initial setup from the CLI
-  .replace('uebersicht-calendar.widget/uebersicht-calendar.widget', 'uebersicht-calendar.widget')
+const TOKEN_PATH = path.join(process.env.PWD, 'calendar/token.json')
 
-const CREDENTIALS_PATH = path
-  .join(process.env.PWD, 'uebersicht-calendar.widget', 'credentials.json')
-  // NOTE: ⚠ Workaround so we can run initial setup from the CLI
-  .replace('uebersicht-calendar.widget/uebersicht-calendar.widget', 'uebersicht-calendar.widget')
+const CREDENTIALS_PATH = path.join(process.env.PWD, 'calendar/credentials.json')
 
 // Load client secrets from a local file.
 fs.readFile(CREDENTIALS_PATH, (err, content) => {
