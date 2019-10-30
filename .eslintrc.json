@@ -4,7 +4,7 @@
     "eslint-comments/no-use": [
       "error",
       {
-        "allow": ["eslint-disable-next-line", "global"]
+        "allow": ["eslint-disable-next-line", "global", "no-console"]
       }
     ]
   }
