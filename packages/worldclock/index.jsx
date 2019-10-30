@@ -54,10 +54,14 @@ export const render = () => {
 // Styling...
 export const className = css`
   font: normal normal 100 0.96em/1.28 -apple-system, Helvetica Neue;
-  color: #9a9a9a;
+  color: #33333364;
   left: 2em;
   top: 6em;
   min-width: 200px;
+
+  @media (prefers-color-scheme: dark) {
+    color: #9a9a9a;
+  }
 `
 
 const WorldClockContainer = styled('div')`
@@ -83,8 +87,11 @@ export const time = css`
   font-weight: 150;
   font-size: 2em;
   flex-grow: 1;
+  color: #333333;
 
-  color: #fff;
+  @media (prefers-color-scheme: dark) {
+    color: #fff;
+  }
 `
 
 export const info = css`

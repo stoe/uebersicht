@@ -28,10 +28,14 @@ export const render = ({error}) => {
 // Styling...
 export const className = css`
   font: normal normal 100 0.96em/1.28 -apple-system, Helvetica Neue;
-  color: #9a9a9a;
+  color: #33333364;
   left: 2em;
   top: 2em;
   min-width: 200px;
+
+  @media (prefers-color-scheme: dark) {
+    color: #9a9a9a;
+  }
 `
 
 export const SimpleClock = styled('div')`
@@ -41,7 +45,11 @@ export const SimpleClock = styled('div')`
 
 export const time = css`
   font-weight: 300;
-  color: #fff;
+  color: #333333;
+
+  @media (prefers-color-scheme: dark) {
+    color: #fff;
+  }
 `
 export const date = css`
   font-size: 0.32em;
