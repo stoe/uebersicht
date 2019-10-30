@@ -7,6 +7,8 @@ const readline = require('readline')
 const {google} = require('googleapis')
 const moment = require('moment')
 
+const truncate = input => (input.length > 50 ? `${input.substring(0, 47)}...` : input)
+
 // If modifying these scopes, delete token.json.
 const SCOPES = ['https://www.googleapis.com/auth/calendar.readonly']
 
@@ -100,7 +102,7 @@ function listEvents(auth) {
             data.push({
               date,
               time,
-              event: event.summary,
+              event: truncate(event.summary),
               href,
               status
             })
