@@ -1,24 +1,16 @@
 {
-  "npmClient": "yarn",
-  "packages": [
-    "packages/*"
-  ],
+  "npmClient": "npm",
+  "packages": ["packages/*"],
   "command": {
     "version": {
       "exact": true
     },
     "publish": {
       "npmClient": "npm",
-      "allowBranch": [
-        "master"
-      ],
+      "allowBranch": ["master"],
       "registry": "https://npm.pkg.github.com/"
     },
-    "bootstrap": {
-      "npmClientArgs": [
-        "--no-package-lock"
-      ]
-    }
+    "bootstrap": {}
   },
   "version": "independent"
 }
