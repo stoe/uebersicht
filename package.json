@@ -23,6 +23,7 @@
   "devDependencies": {
     "eslint": "^6.6.0",
     "eslint-plugin-github": "^3.2.1",
+    "eslint-plugin-jest": "^23.0.2",
     "lerna": "^3.18.3"
   },
   "resolutions": {}
