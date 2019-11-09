@@ -10,7 +10,7 @@ on:
 
 jobs:
   test:
-    runs-on: macos-10.14
+    runs-on: macos-latest
     strategy:
       matrix:
         node: ['10', '12']
