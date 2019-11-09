@@ -20,9 +20,14 @@ jobs:
       - uses: actions/setup-node@master
         with:
           node-version: ${{ matrix.node }}
-      - run: npm install -g lerna
-      - run: npm ci
-      - run: lerna run test
+      - uses: actions/cache@v1
+        id: node-cache
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+      - run: npm install
+        if: steps.node-cache.outputs.cache-hit != 'true'
+      - run: ./node_modules/.bin/lerna run test
 
   publish:
     needs: [test]
@@ -35,8 +40,14 @@ jobs:
       - uses: actions/setup-node@master
         with:
           registry-url: 'https://npm.pkg.github.com'
-      - run: npm install -g lerna
-      - run: lerna publish from-package --yes
+      - uses: actions/cache@v1
+        id: node-cache
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+      - run: npm install
+        if: steps.node-cache.outputs.cache-hit != 'true'
+      - run: ./node_modules/.bin/lerna publish from-package --yes
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         if: github.event_name == 'push'

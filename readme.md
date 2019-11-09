@@ -1,6 +1,6 @@
 # uebersicht
 
-[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier) [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/) [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=stoe/uebersicht&identifier=202770488)](https://dependabot.com)
+[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier) [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
 
 Widgets for [Übersicht](http://tracesof.net/uebersicht)
 
@@ -28,4 +28,4 @@ Widgets for [Übersicht](http://tracesof.net/uebersicht)
 
 ## License
 
-MIT © [Stefan Stölzle](https://github.com/stoe)
+[MIT](./license) © [Stefan Stölzle](https://github.com/stoe)
