@@ -1,5 +1,3 @@
-name: Test and publish
-
 on:
   pull_request:
     branches:
@@ -8,23 +6,25 @@ on:
     branches:
       - master
 
+name: Test and publish
+
 jobs:
   test:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: ['10', '12']
+        node: ['10.x', '12.x']
     name: Test on Node v${{ matrix.node }}
     steps:
-      - uses: actions/checkout@master
-      - uses: actions/setup-node@master
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node }}
       - uses: actions/cache@v1
         id: node-cache
         with:
           path: node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          key: node-cache-${{ hashFiles('**/package-lock.json') }}
       - run: npm install
         if: steps.node-cache.outputs.cache-hit != 'true'
       - run: ./node_modules/.bin/lerna run test
@@ -34,17 +34,17 @@ jobs:
     runs-on: ubuntu-latest
     name: Publish
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v1
         with:
           node-version: 10.x
-      - uses: actions/setup-node@master
+      - uses: actions/setup-node@v1
         with:
           registry-url: 'https://npm.pkg.github.com'
       - uses: actions/cache@v1
         id: node-cache
         with:
           path: node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          key: node-cache-${{ hashFiles('**/package-lock.json') }}
       - run: npm install --ignore-scripts
         if: steps.node-cache.outputs.cache-hit != 'true'
       - run: ./node_modules/.bin/lerna publish from-package --yes

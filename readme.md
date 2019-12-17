@@ -18,9 +18,9 @@ Widgets for [Übersicht](http://tracesof.net/uebersicht)
 
 > A simple clock widget for http://tracesof.net/uebersicht
 
-### [spotify](packages/spotify)
+### [nowplaying](packages/nowplaying)
 
-> A "now playing" on Spotify widget for http://tracesof.net/uebersicht
+> A 'now playing' on Spotify/Music app widget for http://tracesof.net/uebersicht
 
 ### [worldclock](packages/worldclock)
 
