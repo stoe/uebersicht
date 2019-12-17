@@ -1,11 +1,12 @@
 {
-  "name": "@stoe/uebersicht-spotify",
-  "version": "1.1.1",
-  "description": "A 'now playing' on Spotify widget for http://tracesof.net/uebersicht",
+  "name": "@stoe/uebersicht-nowplaying",
+  "version": "2.0.0",
+  "description": "A 'now playing' on Spotify/Music app widget for http://tracesof.net/uebersicht",
   "keywords": [
     "uebersicht",
     "widget",
-    "spotify"
+    "spotify",
+    "music"
   ],
   "author": {
     "name": "Stefan Stölzle",

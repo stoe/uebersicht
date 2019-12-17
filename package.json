@@ -17,13 +17,14 @@
     "@stoe/uebersicht-calendar": "file:packages/calendar",
     "@stoe/uebersicht-calendar-private": "file:packages/calendar-private",
     "@stoe/uebersicht-simpleclock": "file:packages/simpleclock",
-    "@stoe/uebersicht-spotify": "file:packages/spotify",
+    "@stoe/uebersicht-nowplaying": "file:packages/nowplaying",
     "@stoe/uebersicht-worldclock": "file:packages/worldclock"
   },
   "devDependencies": {
-    "eslint": "^6.6.0",
-    "eslint-plugin-github": "^3.2.1",
-    "lerna": "^3.18.3"
+    "eslint": "^6.7.2",
+    "eslint-plugin-github": "^3.4.0",
+    "eslint-plugin-jest": "^23.1.1",
+    "lerna": "^3.19.0"
   },
   "resolutions": {}
 }

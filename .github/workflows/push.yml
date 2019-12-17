@@ -10,34 +10,44 @@ on:
 
 jobs:
   test:
-    runs-on: macos-10.14
+    runs-on: macos-latest
     strategy:
       matrix:
-        node: [ '10', '12' ]
+        node: ['10', '12']
     name: Test on Node v${{ matrix.node }}
     steps:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
         with:
-          version: ${{ matrix.node }}
-      - run: npm install -g yarn
-      - run: yarn global add lerna
-      - run: yarn install --ignore-scripts
-      - run: lerna run test
+          node-version: ${{ matrix.node }}
+      - uses: actions/cache@v1
+        id: node-cache
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+      - run: npm install
+        if: steps.node-cache.outputs.cache-hit != 'true'
+      - run: ./node_modules/.bin/lerna run test
 
   publish:
-    needs: [ test ]
+    needs: [test]
     runs-on: ubuntu-latest
     name: Publish
     steps:
       - uses: actions/checkout@master
         with:
-          version: 10.x
+          node-version: 10.x
       - uses: actions/setup-node@master
         with:
           registry-url: 'https://npm.pkg.github.com'
-      - run: npm install -g lerna
-      - run: lerna publish from-package --yes
+      - uses: actions/cache@v1
+        id: node-cache
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+      - run: npm install --ignore-scripts
+        if: steps.node-cache.outputs.cache-hit != 'true'
+      - run: ./node_modules/.bin/lerna publish from-package --yes
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         if: github.event_name == 'push'
