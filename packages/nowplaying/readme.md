@@ -1,6 +1,6 @@
-# uebersicht-spotify
+# uebersicht-nowplaying
 
-> A "now playing" on Spotify widget for http://tracesof.net/uebersicht
+> A "now playing" on Spotify/Music app widget for http://tracesof.net/uebersicht
 
 ## License
 
