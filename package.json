@@ -5,9 +5,9 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "engines": {
-    "node": ">=10.16",
-    "npm": ">=6.9",
-    "yarn": ">=1.17"
+    "node": ">=12.x",
+    "npm": ">=6.x",
+    "yarn": ">=1.x"
   },
   "scripts": {
     "lint": "github-lint",
@@ -16,15 +16,15 @@
   "dependencies": {
     "@stoe/uebersicht-calendar": "file:packages/calendar",
     "@stoe/uebersicht-calendar-private": "file:packages/calendar-private",
-    "@stoe/uebersicht-simpleclock": "file:packages/simpleclock",
     "@stoe/uebersicht-nowplaying": "file:packages/nowplaying",
+    "@stoe/uebersicht-simpleclock": "file:packages/simpleclock",
     "@stoe/uebersicht-worldclock": "file:packages/worldclock"
   },
   "devDependencies": {
-    "eslint": "^6.7.2",
-    "eslint-plugin-github": "^3.4.0",
-    "eslint-plugin-jest": "^23.1.1",
-    "lerna": "^3.19.0"
+    "eslint": "^6.x",
+    "eslint-plugin-github": "^3.x",
+    "eslint-plugin-jest": "^23.x",
+    "lerna": "^3.x"
   },
   "resolutions": {}
 }
