@@ -14,6 +14,8 @@ Widgets for [Übersicht](http://tracesof.net/uebersicht)
 
 > Private calendar widget for http://tracesof.net/uebersicht
 
+_Same as [calendar](packages/calendar), but with only two lines visible_
+
 ### [simpleclock](packages/simpleclock)
 
 > A simple clock widget for http://tracesof.net/uebersicht
