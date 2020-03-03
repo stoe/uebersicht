@@ -10,6 +10,7 @@ const list = [
   {city: 'New York', tz: 'US/Eastern'},
   {city: 'London', tz: 'Europe/London'},
   {city: 'Ichenhausen', tz: 'Europe/Berlin'},
+  {city: 'Bengaluru', tz: 'Asia/Kolkata'},
   {city: 'Sydney', tz: 'Australia/Sydney'}
 ]
 
