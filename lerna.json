@@ -1,5 +1,5 @@
 {
-  "npmClient": "npm",
+  "npmClient": "yarn",
   "packages": ["packages/*"],
   "command": {
     "version": {
@@ -10,7 +10,9 @@
       "allowBranch": ["master"],
       "registry": "https://npm.pkg.github.com/"
     },
-    "bootstrap": {}
+    "bootstrap": {
+      "npmClientArgs": ["--no-package-lock"]
+    }
   },
   "version": "independent"
 }
