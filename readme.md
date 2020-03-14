@@ -1,6 +1,6 @@
 # uebersicht
 
-[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier) [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
+[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier) [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/) [![Test](https://github.com/stoe/uebersicht/workflows/Test/badge.svg)](https://github.com/stoe/uebersicht/actions?query=workflow%3ATest)
 
 Widgets for [Übersicht](http://tracesof.net/uebersicht)
 
