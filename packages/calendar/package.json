@@ -37,6 +37,7 @@
     "moment": "^2.24.0"
   },
   "resolutions": {
-    "eslint-scope": ">=3.7.1"
+    "eslint-scope": ">=3.7.1",
+    "minimist": ">=1.2.2"
   }
 }
