@@ -104,7 +104,7 @@ gcp-metadata@^3.4.0:
     gaxios "^2.1.0"
     json-bigint "^0.3.0"
 
-google-auth-library@^5.2.0, google-auth-library@^5.6.1:
+google-auth-library@^5.6.1:
   version "5.10.1"
   resolved "https://registry.yarnpkg.com/google-auth-library/-/google-auth-library-5.10.1.tgz#504ec75487ad140e68dd577c21affa363c87ddff"
   integrity sha512-rOlaok5vlpV9rSiUu5EpR0vVpc+PhN62oF4RyX/6++DG1VsaulAFEMlDYBLjJDDPI6OcNOCGAKy9UVB/3NIDXg==
@@ -126,7 +126,7 @@ google-p12-pem@^2.0.0:
   dependencies:
     node-forge "^0.9.0"
 
-googleapis-common@^3.1.0:
+googleapis-common@^3.2.0:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/googleapis-common/-/googleapis-common-3.2.2.tgz#f8631f94b3a5c58d8ce955c3290bb65fdb6d7ba4"
   integrity sha512-sTEXlauVce4eMX0S6hVoiWgxVzQZ7dc16KcGF7eh+A+uIyDgXqnuwOMZw+svX4gOJv6w4ACecm23Qh9UDaldsw==
@@ -138,13 +138,13 @@ googleapis-common@^3.1.0:
     url-template "^2.0.8"
     uuid "^7.0.0"
 
-googleapis@^44.0.0:
-  version "44.0.0"
-  resolved "https://registry.yarnpkg.com/googleapis/-/googleapis-44.0.0.tgz#e78dc5dee734225a82136616c536fa97d4e2d12f"
-  integrity sha512-xfToYX/Z7zkGJnMjA2FTRZGqc3W+3WjU7KH6jh6+GvQBxEofZjEcfDmy+h+yZKeky7mWBT35LdRr1MM2jXYnyA==
+googleapis@^48.0.0:
+  version "48.0.0"
+  resolved "https://registry.yarnpkg.com/googleapis/-/googleapis-48.0.0.tgz#2c3f7628d414f8cc27c5dd7ca2d9bba6b03c4179"
+  integrity sha512-ysp0/GN1BdOC8no1M6Pn/jS445xLL/FiTRa+aYJXD/HhtWFb+NOlNSfHIVnLjlQZsCn6L4qj1EpOaM/979nnEw==
   dependencies:
-    google-auth-library "^5.2.0"
-    googleapis-common "^3.1.0"
+    google-auth-library "^5.6.1"
+    googleapis-common "^3.2.0"
 
 gtoken@^4.1.0:
   version "4.1.4"

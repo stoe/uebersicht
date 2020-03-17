@@ -5,9 +5,9 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "engines": {
-    "node": ">=12.x",
-    "npm": ">=6.x",
-    "yarn": ">=1.x"
+    "node": ">=12",
+    "npm": ">=6",
+    "yarn": ">=1"
   },
   "scripts": {
     "lint": "github-lint",

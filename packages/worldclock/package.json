@@ -1,6 +1,6 @@
 {
   "name": "@stoe/uebersicht-worldclock",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "A worldclock widget for http://tracesof.net/uebersicht",
   "keywords": [
     "uebersicht",
@@ -25,15 +25,15 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "engines": {
-    "node": ">=10.16",
-    "npm": ">=6.9",
-    "yarn": ">=1.17"
+    "node": ">=12",
+    "npm": ">=6",
+    "yarn": ">=1"
   },
   "scripts": {
     "test": "eslint '*.jsx'"
   },
   "dependencies": {
-    "moment-timezone": "^0.5.27"
+    "moment-timezone": "^0.5.28"
   },
   "resolutions": {
     "eslint-scope": ">=3.7.1",
