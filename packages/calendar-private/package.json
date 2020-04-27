@@ -1,6 +1,6 @@
 {
   "name": "@stoe/uebersicht-calendar-private",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "Private calendar widget for http://tracesof.net/uebersicht",
   "keywords": [
     "uebersicht",
@@ -33,7 +33,7 @@
     "test": "eslint '*.jsx'"
   },
   "dependencies": {
-    "googleapis": "^48.0.0",
+    "googleapis": "^49.0.0",
     "moment": "^2.24.0"
   },
   "resolutions": {
