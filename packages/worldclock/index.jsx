@@ -11,34 +11,31 @@ const list = [
   {city: 'London', tz: 'Europe/London'},
   {city: 'Ichenhausen', tz: 'Europe/Berlin'},
   {city: 'Bengaluru', tz: 'Asia/Kolkata'},
-  {city: 'Sydney', tz: 'Australia/Sydney'}
+  {city: 'Sydney', tz: 'Australia/Sydney'},
 ]
 
 export const refreshFrequency = 1000 // Use ms (every seconds)
 
 // eslint-disable-next-line no-unused-vars
-export const command = dispatch => {}
+export const command = (dispatch) => {}
 
 export const render = () => {
   const now = moment()
 
-  const items = list.map(item => {
+  const items = list.map((item) => {
     const {city, tz} = item
 
-    const [date, time, timezone] = now
-      .tz(tz)
-      .format('DD.MM HH:mm z')
-      .split(' ')
+    const [date, time, timezone] = now.tz(tz).format('DD.MM HH:mm z').split(' ')
 
     return {
       city,
       date,
       time,
-      timezone
+      timezone,
     }
   })
 
-  return items.map(item => (
+  return items.map((item) => (
     <WorldClockContainer key={item.city}>
       <div className={city}>{item.city}</div>
       <div className={timeblock}>
