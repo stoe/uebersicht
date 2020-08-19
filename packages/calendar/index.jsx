@@ -17,12 +17,12 @@ export const updateState = (event, prev) => {
     case 'UB/COMMAND_RAN':
       try {
         return {
-          items: JSON.parse(event.output) || []
+          items: JSON.parse(event.output) || [],
         }
       } catch (error) {
         // console.error(error);
         return {
-          items: []
+          items: [],
         }
       }
     default:
