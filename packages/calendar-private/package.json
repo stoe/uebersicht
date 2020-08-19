@@ -1,6 +1,6 @@
 {
   "name": "@stoe/uebersicht-calendar-private",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "description": "Private calendar widget for http://tracesof.net/uebersicht",
   "keywords": [
     "uebersicht",
@@ -37,6 +37,7 @@
     "moment": "^2.24.0"
   },
   "resolutions": {
+    "dot-prop": ">=5.2.0",
     "eslint-scope": ">=3.7.1",
     "minimist": ">=1.2.2"
   }
