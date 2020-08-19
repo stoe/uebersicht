@@ -27,6 +27,7 @@
     "lerna": "^3.x"
   },
   "resolutions": {
+    "dot-prop": ">=5.2.0",
     "minimist": ">=1.2.2"
   }
 }

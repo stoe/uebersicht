@@ -1,6 +1,6 @@
 {
   "name": "@stoe/uebersicht-nowplaying",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "A 'now playing' on Spotify/Music app widget for http://tracesof.net/uebersicht",
   "keywords": [
     "uebersicht",
@@ -34,6 +34,7 @@
     "test": "eslint '*.jsx'"
   },
   "resolutions": {
+    "dot-prop": ">=5.2.0",
     "eslint-scope": ">=3.7.1",
     "minimist": ">=1.2.2"
   }

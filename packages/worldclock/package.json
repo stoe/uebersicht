@@ -1,6 +1,6 @@
 {
   "name": "@stoe/uebersicht-worldclock",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "description": "A worldclock widget for http://tracesof.net/uebersicht",
   "keywords": [
     "uebersicht",
@@ -36,6 +36,7 @@
     "moment-timezone": "^0.5.28"
   },
   "resolutions": {
+    "dot-prop": ">=5.2.0",
     "eslint-scope": ">=3.7.1",
     "minimist": ">=1.2.2"
   }
