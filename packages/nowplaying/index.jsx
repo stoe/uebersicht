@@ -1,5 +1,4 @@
-/* global React */
-import {styled, css} from 'uebersicht'
+import React, {styled, css} from 'uebersicht'
 
 export const command = 'osascript ./nowplaying/applescript.scpt | echo'
 export const refreshFrequency = 1000
@@ -18,12 +17,12 @@ export const updateState = (event, previousState) => {
   return playing
     ? {
         playing,
-        data: {app, track, artist, position, length},
+        data: {app, track, artist, position, length}
       }
     : {playing}
 }
 
-const truncate = (input) => (input.length > 42 ? `${input.substring(0, 39)}...` : input)
+const truncate = input => (input.length > 42 ? `${input.substring(0, 39)}...` : input)
 
 const displayData = ({app, artist, track}) => {
   const isSpotify = app === 'Spotify' ? 'inline' : 'none'

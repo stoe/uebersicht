@@ -8,20 +8,29 @@ name: Publish
 jobs:
   publish:
     runs-on: ubuntu-latest
-    name: Publish
+
     steps:
       - uses: actions/checkout@v2
+        with:
+          lfs: true
+
       - uses: actions/setup-node@v1
         with:
           node-version: 12.x
           registry-url: 'https://npm.pkg.github.com'
-      - uses: actions/cache@v1
-        id: yarn-cache
+
+      - run: |
+          echo "::set-output name=dir::$(npm config get cache)"
+        id: npm-cache
+
+      - uses: actions/cache@v2
         with:
-          path: node_modules
-          key: ${{ runner.os }}-12.x-yarn-${{ hashFiles('**/yarn.lock') }}
-      - run: yarn install --ignore-scripts --pure-lockfile
-        if: steps.yarn-cache.outputs.cache-hit != 'true'
+          path: ${{ steps.npm-cache.outputs.dir }}
+          key: npm-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: npm-
+
+      - run: npm install --ignore-scripts --pure-lockfile
+
       - run: ./node_modules/.bin/lerna publish from-package --yes
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

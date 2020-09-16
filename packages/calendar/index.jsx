@@ -1,5 +1,4 @@
-/* global React */
-import {css, styled} from 'uebersicht'
+import React, {css, styled} from 'uebersicht'
 
 export const refreshFrequency = 300000 // Use ms (every 5 Minutes)
 
@@ -17,12 +16,12 @@ export const updateState = (event, prev) => {
     case 'UB/COMMAND_RAN':
       try {
         return {
-          items: JSON.parse(event.output) || [],
+          items: JSON.parse(event.output) || []
         }
       } catch (error) {
         // console.error(error);
         return {
-          items: [],
+          items: []
         }
       }
     default:
@@ -44,7 +43,6 @@ export const render = ({items, error}) => {
     return (
       <Calendar>
         {items.map(({date, time, event}, idx) => (
-          // eslint-disable-next-line react/no-array-index-key
           <CalendarItem key={idx}>
             <CalendarDate>{date}</CalendarDate>
             <CalendarTime>{time === '24:00' ? 'all day' : time}</CalendarTime>

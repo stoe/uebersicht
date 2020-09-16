@@ -75,11 +75,12 @@ function getAccessToken(oAuth2Client, callback) {
 // @param {google.auth.OAuth2} auth An authorized OAuth2 client.
 function listEvents(auth) {
   const calendar = google.calendar({version: 'v3', auth})
+
   calendar.events.list(
     {
       calendarId: 'primary',
       timeMin: new Date().toISOString(),
-      maxResults: 5,
+      maxResults: 25,
       singleEvents: true,
       orderBy: 'startTime',
       showDeleted: false,
@@ -87,17 +88,29 @@ function listEvents(auth) {
     },
     (err, res) => {
       if (err) return console.log(`The API returned an error: ${err}`)
+
       const events = res.data.items
+
       if (events.length) {
         const data = []
-        events.map(event => {
-          const start = event.start.dateTime || event.start.date
-          const {htmlLink: href, status} = event
+        let i = 0
 
-          if (event.summary) {
-            const [date, time] = moment(start)
-              .format('MM/DD kk:mm')
-              .split(' ')
+        for (const event of events) {
+          const start = event.start.dateTime || event.start.date
+          const {htmlLink: href, status, attendees} = event
+
+          let declined = false
+          let a = []
+          if (attendees && attendees.length > 0) {
+            a = attendees.filter(attendee => {
+              return attendee.email === 'stoe@github.com'
+            })
+
+            declined = a[0].responseStatus === 'declined'
+          }
+
+          if (event.summary && i < 5 && !declined) {
+            const [date, time] = moment(start).format('MM/DD kk:mm').split(' ')
 
             data.push({
               date,
@@ -106,8 +119,10 @@ function listEvents(auth) {
               href,
               status
             })
+
+            i++
           }
-        })
+        }
 
         console.log(JSON.stringify(data))
       } else {

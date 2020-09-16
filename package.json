@@ -6,12 +6,11 @@
   },
   "engines": {
     "node": ">=12",
-    "npm": ">=6",
-    "yarn": ">=1"
+    "npm": ">=6"
   },
   "scripts": {
-    "lint": "github-lint",
-    "pretest": "npm run lint"
+    "pretest": "eslint --print-config .eslintrc.json | eslint-config-prettier-check",
+    "test": "eslint ."
   },
   "dependencies": {
     "@stoe/uebersicht-calendar": "file:packages/calendar",
@@ -21,13 +20,16 @@
     "@stoe/uebersicht-worldclock": "file:packages/worldclock"
   },
   "devDependencies": {
-    "eslint": "^6.x",
-    "eslint-plugin-github": "^3.x",
-    "eslint-plugin-jest": "^23.x",
-    "lerna": "^3.x"
+    "@github/prettier-config": "^0.0.4",
+    "eslint": "^7.9.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-github": "^4.1.1",
+    "eslint-plugin-react": "^7.20.6",
+    "lerna": "^3.22.1"
   },
   "resolutions": {
     "dot-prop": ">=5.2.0",
     "minimist": ">=1.2.2"
-  }
+  },
+  "prettier": "@github/prettier-config"
 }
