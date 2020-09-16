@@ -39,6 +39,6 @@ jobs:
         env:
           CI: true
 
-      - run: npm test
+      - run: ./node_modules/.bin/lerna run test
         env:
           CI: true
