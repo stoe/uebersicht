@@ -95,9 +95,7 @@ function listEvents(auth) {
           const {htmlLink: href, status} = event
 
           if (event.summary) {
-            const [date, time] = moment(start)
-              .format('MM/DD kk:mm')
-              .split(' ')
+            const [date, time] = moment(start).format('MM/DD kk:mm').split(' ')
 
             data.push({
               date,

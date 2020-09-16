@@ -1,11 +1,19 @@
 {
-  "extends": ["plugin:github/es6", "plugin:github/node", "plugin:github/react"],
-  "rules": {
-    "eslint-comments/no-use": [
-      "error",
-      {
-        "allow": ["eslint-disable-next-line", "global"]
+  "parserOptions": {
+    "ecmaVersion": 2020,
+      "sourceType": "module",
+      "ecmaFeatures": {
+          "jsx": true
       }
-    ]
+  },
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "plugins": ["github", "react"],
+  "extends": ["plugin:github/recommended", "plugin:react/recommended"],
+  "rules": {
+    "camelcase": "off",
+    "no-console": "off"
   }
 }
