@@ -15,5 +15,10 @@
   "rules": {
     "camelcase": "off",
     "no-console": "off"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   }
 }
