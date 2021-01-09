@@ -33,7 +33,7 @@
     "test": "eslint '*.jsx'"
   },
   "dependencies": {
-    "googleapis": "^59.0.0",
+    "googleapis": "^67.0.0",
     "moment": "^2.28.0"
   },
   "resolutions": {
