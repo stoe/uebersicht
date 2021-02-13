@@ -46,16 +46,14 @@ export const render = ({playing, data}) => (playing ? <div>{displayData(data)}</
 
 // Styling...
 export const className = css`
-  font: normal normal 100 0.64em/1.28 -apple-system, Helvetica Neue;
-  right: 2em;
-  bottom: 2em;
+  font: normal normal 100 0.96em/1.28 -apple-system, Helvetica Neue;
+  left: 2em;
+  top: 2em;
   min-width: 200px;
-  width: auto;
-  text-align: right;
 `
 
 export const Player = styled('div')`
-  font-size: 2.5em;
+  font-size: 1.5em;
   font-weight: 100;
   color: #fff;
   margin: 0;
@@ -74,17 +72,18 @@ export const SpotifyIcon = styled('svg')`
 `
 
 export const MusicIcon = styled('svg')`
-  color: #9a9a9a64;
+  color: #9a9a9a94;
   fill: currentColor;
   height: 0.75em;
   margin-right: 0.32em;
 `
 
 export const trackClass = css`
-  font-weight: 400;
+  font-weight: 300;
   margin-right: 0.32em;
 `
 
 export const artistClass = css`
-  color: #9a9a9a64;
+  color: #9a9a9a94;
+  font-weight: 100;
 `

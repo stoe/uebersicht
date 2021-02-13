@@ -7,14 +7,10 @@ export const refreshFrequency = 1000 // Use ms (every seconds)
 // eslint-disable-next-line no-unused-vars
 export const command = dispatch => {}
 
-export const render = ({error}) => {
+export const render = () => {
   const [myDate, myTime] = moment().format('DD.MM.YYYY HH:mm').split(' ')
 
-  return error ? (
-    <div>
-      Something went wrong: <strong>{String(error)}</strong>
-    </div>
-  ) : (
+  return (
     <SimpleClock>
       <span className={time}>{myTime}</span>
       <span className={date}>{myDate}</span>
@@ -25,9 +21,9 @@ export const render = ({error}) => {
 // Styling...
 export const className = css`
   font: normal normal 100 0.96em/1.28 -apple-system, Helvetica Neue;
-  color: #9a9a9a;
+  color: #9a9a9a94;
   left: 2em;
-  top: 2em;
+  top: 6em;
   min-width: 200px;
 `
 

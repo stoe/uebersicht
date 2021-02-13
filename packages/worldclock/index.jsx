@@ -51,10 +51,16 @@ export const render = () => {
 // Styling...
 export const className = css`
   font: normal normal 100 0.96em/1.15 -apple-system, Helvetica Neue;
-  color: #9a9a9a;
+  color: #9a9a9a94;
   left: 2em;
-  top: 6em;
+  top: 10em;
   min-width: 200px;
+`
+
+export const Error = styled('div')`
+  font: normal normal 100 0.96em/1.28 -apple-system, Helvetica Neue;
+  color: #9c1c23;
+  margin: 0;
 `
 
 const WorldClockContainer = styled('div')`

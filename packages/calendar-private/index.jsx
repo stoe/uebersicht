@@ -65,12 +65,12 @@ export const className = css`
   font: normal normal 100 0.96em/1.28 -apple-system, Helvetica Neue;
 
   font-weight: 100;
-  color: #9a9a9a64;
+  color: #9a9a9a94;
   left: 2em;
   bottom: 9em;
   padding-bottom: 0.96em;
 
-  border-bottom: 1px solid #9a9a9a64;
+  border-bottom: 1px solid #9a9a9a48;
 `
 
 export const Error = styled('div')`
