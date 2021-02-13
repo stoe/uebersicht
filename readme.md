@@ -1,6 +1,6 @@
 # uebersicht
 
-[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier) [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/) [![Test](https://github.com/stoe/uebersicht/workflows/Test/badge.svg)](https://github.com/stoe/uebersicht/actions?query=workflow%3ATest)
+[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier) [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/) [![Test](https://github.com/stoe/uebersicht/workflows/Test/badge.svg)](https://github.com/stoe/uebersicht/actions/workflows/test.yml) [![CodeQL](https://github.com/stoe/uebersicht/actions/workflows/codeql.yml/badge.svg)](https://github.com/stoe/uebersicht/actions/workflows/codeql.yml) [![Publish](https://github.com/stoe/uebersicht/actions/workflows/publish.yml/badge.svg)](https://github.com/stoe/uebersicht/actions/workflows/publish.yml)
 
 Widgets for [Übersicht](http://tracesof.net/uebersicht)
 
