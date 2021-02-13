@@ -9,7 +9,7 @@
     "npm": ">=6"
   },
   "scripts": {
-    "pretest": "eslint --print-config .eslintrc.json | eslint-config-prettier-check",
+    "pretest": "npx eslint-config-prettier .eslintrc.json",
     "test": "eslint ."
   },
   "dependencies": {
