@@ -10,27 +10,33 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - name: checkout
+        uses: actions/checkout@v2
         with:
           lfs: true
 
-      - uses: actions/setup-node@v2.1.4
+      - name: set up
+        uses: actions/setup-node@v2.1.4
         with:
           node-version: 12.x
           registry-url: 'https://npm.pkg.github.com'
 
-      - run: |
+      - name: get cache
+        run: |
           echo "::set-output name=dir::$(npm config get cache)"
         id: npm-cache
 
-      - uses: actions/cache@v2.1.4
+      - name: use cache
+        uses: actions/cache@v2.1.4
         with:
           path: ${{ steps.npm-cache.outputs.dir }}
           key: npm-${{ hashFiles('**/package-lock.json') }}
           restore-keys: npm-
 
-      - run: npm install --ignore-scripts --pure-lockfile
+      - name: dependencies
+        run: npm install --ignore-scripts --pure-lockfile
 
-      - run: ./node_modules/.bin/lerna publish from-package --yes
+      - name: publish
+        run: npx lerna publish from-package --yes
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
