@@ -33,7 +33,7 @@
     "test": "eslint '*.jsx'"
   },
   "dependencies": {
-    "moment": "^2.28.0"
+    "moment": "^2.29.1"
   },
   "resolutions": {
     "dot-prop": ">=5.2.0",
