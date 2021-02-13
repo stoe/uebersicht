@@ -7,7 +7,7 @@
     },
     "publish": {
       "npmClient": "npm",
-      "allowBranch": ["master"],
+      "allowBranch": ["main"],
       "registry": "https://npm.pkg.github.com/"
     },
     "bootstrap": {

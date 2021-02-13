@@ -5,8 +5,8 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "engines": {
-    "node": ">=12",
-    "npm": ">=6"
+    "node": ">=14",
+    "npm": ">=7"
   },
   "scripts": {
     "pretest": "npx eslint-config-prettier .eslintrc.json",
@@ -26,10 +26,6 @@
     "eslint-plugin-github": "^4.1.1",
     "eslint-plugin-react": "^7.22.0",
     "lerna": "^3.22.1"
-  },
-  "resolutions": {
-    "dot-prop": ">=5.2.0",
-    "minimist": ">=1.2.2"
   },
   "prettier": "@github/prettier-config"
 }

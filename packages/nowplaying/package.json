@@ -26,16 +26,10 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "engines": {
-    "node": ">=12",
-    "npm": ">=6",
-    "yarn": ">=1"
+    "node": ">=14",
+    "npm": ">=7"
   },
   "scripts": {
     "test": "eslint '*.jsx'"
-  },
-  "resolutions": {
-    "dot-prop": ">=5.2.0",
-    "eslint-scope": ">=3.7.1",
-    "minimist": ">=1.2.2"
   }
 }
