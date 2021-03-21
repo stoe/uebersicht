@@ -27,5 +27,6 @@
     "eslint-plugin-react": "^7.22.0",
     "lerna": "^3.22.1"
   },
-  "prettier": "@github/prettier-config"
+  "prettier": "@github/prettier-config",
+  "repository": "github:stoe/uebersicht"
 }
