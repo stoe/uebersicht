@@ -32,12 +32,7 @@
     "test": "eslint '*.jsx'"
   },
   "dependencies": {
-    "googleapis": "^67.0.0",
+    "googleapis": "^76.0.0",
     "moment": "^2.29.1"
-  },
-  "resolutions": {
-    "dot-prop": ">=5.2.0",
-    "eslint-scope": ">=3.7.1",
-    "minimist": ">=1.2.2"
   }
 }
