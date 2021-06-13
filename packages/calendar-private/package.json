@@ -1,6 +1,6 @@
 {
   "name": "@stoe/uebersicht-calendar-private",
-  "version": "0.0.0-development",
+  "version": "3.0.0",
   "description": "Private calendar widget for http://tracesof.net/uebersicht",
   "keywords": [
     "uebersicht",
