@@ -79,6 +79,7 @@ export const MusicIcon = styled('svg')`
 export const trackClass = css`
   font-weight: 300;
   display: block;
+  text-shadow: 1px 2px 2px #00000064;
 `
 
 export const artistClass = css`

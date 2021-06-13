@@ -88,6 +88,7 @@ export const time = css`
   flex-grow: 1;
 
   color: #fff;
+  text-shadow: 1px 2px 2px #00000064;
 `
 
 export const info = css`

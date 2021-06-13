@@ -1,42 +1,41 @@
+name: Publish
+
 on:
   push:
     branches:
       - main
 
-name: Publish
-
 jobs:
   publish:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: read
+      packages: write
+
     steps:
-      - name: checkout
-        uses: actions/checkout@v2
-        with:
-          lfs: true
+      - uses: actions/checkout@v2.3.4
 
-      - name: set up
-        uses: actions/setup-node@v2.1.4
+      - uses: actions/setup-node@v2.1.5
         with:
-          node-version: 12.x
+          node-version: 14.x
+          registry-url: 'https://registry.npmjs.org'
+          scope: '@stoe'
+
+      - run: npm install --ignore-scripts --pure-lockfile
+
+      # Publish to npm
+      - run: npx lerna publish from-package --yes
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - uses: actions/setup-node@v2.1.5
+        with:
+          node-version: 14.x
           registry-url: 'https://npm.pkg.github.com'
+          scope: '@stoe'
 
-      - name: get cache
-        run: |
-          echo "::set-output name=dir::$(npm config get cache)"
-        id: npm-cache
-
-      - name: use cache
-        uses: actions/cache@v2.1.4
-        with:
-          path: ${{ steps.npm-cache.outputs.dir }}
-          key: npm-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: npm-
-
-      - name: dependencies
-        run: npm install --ignore-scripts --pure-lockfile
-
-      - name: publish
-        run: npx lerna publish from-package --yes
+      # Publish to GitHub Packages
+      - run: npx lerna publish from-package --yes
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
