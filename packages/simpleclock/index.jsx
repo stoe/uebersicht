@@ -35,6 +35,7 @@ export const SimpleClock = styled('div')`
 export const time = css`
   font-weight: 300;
   color: #fff;
+  text-shadow: 1px 2px 2px #00000064;
 `
 export const date = css`
   font-size: 0.32em;

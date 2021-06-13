@@ -104,6 +104,9 @@ const CalendarTime = styled('span')`
 const CalendarEvent = styled('span')`
   flex-grow: 10;
   color: #fff;
+  text-shadow: 1px 2px 2px #00000064;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 `
 
 const CalendarAllDayEvent = styled('span')`
