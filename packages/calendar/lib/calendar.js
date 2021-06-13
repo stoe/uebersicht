@@ -95,7 +95,10 @@ function listEvents(auth) {
         const data = []
         let i = 0
 
-        for (const event of events) {
+        // dedupe
+        const _e = [...new Map(events.map(item => [item['summary'], item])).values()]
+
+        for (const event of _e) {
           const start = event.start.dateTime || event.start.date
           const {htmlLink: href, status, attendees} = event
 
