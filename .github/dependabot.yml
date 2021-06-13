@@ -3,12 +3,9 @@ updates:
   - package-ecosystem: 'github-actions'
     directory: '/'
     schedule:
-      interval: 'weekly'
-      day: 'saturday'
-      time: '09:00'
-      timezone: 'Europe/Berlin'
+      interval: 'monthly'
     commit-message:
-      prefix: 'action'
+      prefix: '🆙 github-action'
     labels:
       - 'github-action :robot:'
 
@@ -17,7 +14,7 @@ updates:
     schedule:
       interval: 'monthly'
     commit-message:
-      prefix: 'npm'
+      prefix: '🆙 npm'
       include: 'scope'
     labels:
       - 'dependency :robot:'
