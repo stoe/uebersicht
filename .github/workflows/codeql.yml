@@ -1,14 +1,16 @@
+name: CodeQL
+
 on:
   pull_request:
   push:
     branches-ignore:
       - main
 
-name: CodeQL
-
 jobs:
   codeql:
     runs-on: ubuntu-latest
+
+    permissions: read-all
 
     steps:
       - name: checkout
