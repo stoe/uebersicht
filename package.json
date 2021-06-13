@@ -1,9 +1,13 @@
 {
   "name": "root",
   "private": true,
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+  "author": {
+    "name": "Stefan Stölzle",
+    "email": "stefan@github.com",
+    "url": "https://github.com/stoe"
   },
+  "license": "MIT",
+  "repository": "github:stoe/uebersicht",
   "engines": {
     "node": ">=14",
     "npm": ">=7"
