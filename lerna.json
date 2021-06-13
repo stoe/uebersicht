@@ -13,5 +13,5 @@
       "npmClientArgs": ["--no-package-lock"]
     }
   },
-  "version": "independent"
+  "version": "3.0.0"
 }

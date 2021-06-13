@@ -1,6 +1,5 @@
 {
   "name": "@stoe/uebersicht-worldclock",
-  "version": "1.4.2",
   "description": "A worldclock widget for http://tracesof.net/uebersicht",
   "keywords": [
     "uebersicht",
@@ -14,6 +13,9 @@
   },
   "license": "MIT",
   "repository": "github:stoe/uebersicht",
+  "publishConfig": {
+    "access": "public"
+  },
   "engines": {
     "node": ">=14",
     "npm": ">=7"

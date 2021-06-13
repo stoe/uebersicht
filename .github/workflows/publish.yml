@@ -25,7 +25,7 @@ jobs:
       - run: npm install --ignore-scripts --pure-lockfile
 
       # Publish to npm
-      - run: npx lerna publish from-package --yes --registry https://registry.npmjs.org
+      - run: npx lerna publish --yes --registry https://registry.npmjs.org
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
@@ -36,6 +36,6 @@ jobs:
           scope: '@stoe'
 
       # Publish to GitHub Packages
-      - run: npx lerna publish from-package --yes --registry https://npm.pkg.github.com
+      - run: npx lerna publish --yes --registry https://npm.pkg.github.com
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

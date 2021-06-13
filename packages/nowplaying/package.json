@@ -1,6 +1,5 @@
 {
   "name": "@stoe/uebersicht-nowplaying",
-  "version": "2.3.3",
   "description": "A 'now playing' on Spotify/Music app widget for http://tracesof.net/uebersicht",
   "keywords": [
     "uebersicht",
@@ -15,6 +14,9 @@
   },
   "license": "MIT",
   "repository": "github:stoe/uebersicht",
+  "publishConfig": {
+    "access": "public"
+  },
   "engines": {
     "node": ">=14",
     "npm": ">=7"

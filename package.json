@@ -7,6 +7,9 @@
   },
   "license": "MIT",
   "repository": "github:stoe/uebersicht",
+  "publishConfig": {
+    "access": "public"
+  },
   "engines": {
     "node": ">=14",
     "npm": ">=7"
