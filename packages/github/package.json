@@ -1,0 +1,32 @@
+{
+  "name": "@stoe/uebersicht-github-contibutions",
+  "version": "3.1.0",
+  "description": "A GitHub contibutions widget for http://tracesof.net/uebersicht",
+  "keywords": [
+    "uebersicht",
+    "widget",
+    "github",
+    "contibutions"
+  ],
+  "author": {
+    "name": "Stefan Stölzle",
+    "email": "stefan@stoelzle.me",
+    "url": "https://github.com/stoe"
+  },
+  "license": "MIT",
+  "repository": "github:stoe/uebersicht",
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=14",
+    "npm": ">=7"
+  },
+  "scripts": {
+    "test": "eslint '*.jsx'"
+  },
+  "dependencies": {
+    "@octokit/graphql": "^4.6.4",
+    "dayjs": "^1.10.5"
+  }
+}
