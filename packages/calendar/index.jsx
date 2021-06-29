@@ -67,7 +67,10 @@ export const className = css`
   font-weight: 100;
   color: #9a9a9a94;
   left: 2em;
-  bottom: 2em;
+  bottom: 5.5em;
+  padding-bottom: 0.96em;
+
+  border-bottom: 1px solid #9a9a9a48;
 `
 
 export const Error = styled('div')`
