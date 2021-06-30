@@ -1,11 +1,12 @@
 {
-  "name": "@stoe/uebersicht-calendar",
+  "name": "@stoe/uebersicht-github-contibutions",
   "version": "0.0.0-development",
-  "description": "A calendar widget for http://tracesof.net/uebersicht",
+  "description": "A GitHub contibutions widget for http://tracesof.net/uebersicht",
   "keywords": [
     "uebersicht",
     "widget",
-    "calendar"
+    "github",
+    "contibutions"
   ],
   "author": {
     "name": "Stefan Stölzle",
@@ -25,7 +26,7 @@
     "test": "eslint '*.jsx'"
   },
   "dependencies": {
-    "googleapis": "^78.0.0",
-    "moment": "^2.29.1"
+    "@octokit/graphql": "^4.6.4",
+    "dayjs": "^1.10.5"
   }
 }
