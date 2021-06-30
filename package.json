@@ -21,13 +21,14 @@
   "dependencies": {
     "@stoe/uebersicht-calendar": "file:packages/calendar",
     "@stoe/uebersicht-calendar-private": "file:packages/calendar-private",
+    "@stoe/uebersicht-github-contibutions": "file:packages/github",
     "@stoe/uebersicht-nowplaying": "file:packages/nowplaying",
     "@stoe/uebersicht-simpleclock": "file:packages/simpleclock",
     "@stoe/uebersicht-worldclock": "file:packages/worldclock"
   },
   "devDependencies": {
     "@github/prettier-config": "^0.0.4",
-    "eslint": "^7.28.0",
+    "eslint": "^7.29.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-github": "^4.1.3",
     "eslint-plugin-react": "^7.24.0",
