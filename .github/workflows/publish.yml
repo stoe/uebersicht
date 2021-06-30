@@ -22,8 +22,6 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
           scope: '@stoe'
 
-      - run: npm install --ignore-scripts --pure-lockfile
-
       # Publish to npm
       - run: npx lerna publish from-package --yes --registry https://registry.npmjs.org
         env:
