@@ -25,7 +25,7 @@
     "test": "eslint '*.jsx'"
   },
   "dependencies": {
-    "googleapis": "^79.0.0",
+    "googleapis": "^84.0.0",
     "moment": "^2.29.1"
   }
 }
