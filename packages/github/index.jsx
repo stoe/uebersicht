@@ -69,22 +69,26 @@ export const Error = styled('div')`
 `
 
 export const Contributions = styled('div')`
-  color: #323232;
-
   display: flex;
   flex-direction: row;
-  height: 1em;
+  height: 2vh;
 
   div:last-child {
     margin: 0;
   }
 `
 export const day = css`
-  font: normal normal 400 0.8em ui-monospace, monospace;
+  font: normal normal 600 0.64em ui-monospace, monospace;
+  color: #323232;
   opacity: 0.64;
 
   margin: 0;
   margin-right: 4px;
   padding: 0;
   flex: 1;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 2px 4px;
 `

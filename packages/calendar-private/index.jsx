@@ -66,8 +66,8 @@ export const className = css`
 
   font-weight: 100;
   color: #9a9a9a94;
-  left: 2em;
-  bottom: 2em;
+  left: 0.8em;
+  bottom: 2.5em;
 `
 
 export const Error = styled('div')`

@@ -52,7 +52,7 @@ export const render = () => {
 export const className = css`
   font: normal normal 100 0.96em/1.15 -apple-system, Helvetica Neue;
   color: #9a9a9a94;
-  left: 2em;
+  left: 0.8em;
   top: 10em;
   min-width: 200px;
 `

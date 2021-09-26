@@ -47,8 +47,8 @@ export const render = ({playing, data}) => (playing ? <div>{displayData(data)}</
 // Styling...
 export const className = css`
   font: normal normal 100 0.96em/1.28 -apple-system, Helvetica Neue;
-  left: 2em;
-  top: 2em;
+  left: 0.8em;
+  top: 0.64em;
   min-width: 200px;
 `
 
