@@ -1,4 +1,5 @@
-import React, {styled, css} from 'uebersicht'
+// eslint-disable-next-line import/no-unresolved
+import React, {css, styled} from 'uebersicht'
 
 export const command = 'osascript ./nowplaying/applescript.scpt | echo'
 export const refreshFrequency = 1000

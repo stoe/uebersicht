@@ -1,6 +1,6 @@
-import React, {styled, css} from 'uebersicht'
-
-const moment = require('moment-timezone')
+// eslint-disable-next-line import/no-unresolved
+import React, {css, styled} from 'uebersicht'
+import moment from 'moment-timezone'
 
 const list = [
   {city: 'San Francisco', tz: 'US/Pacific'},
