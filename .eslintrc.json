@@ -14,7 +14,8 @@
   "extends": ["plugin:github/recommended", "plugin:react/recommended"],
   "rules": {
     "camelcase": "off",
-    "no-console": "off"
+    "no-console": "off",
+    "import/no-commonjs": "off"
   },
   "settings": {
     "react": {
