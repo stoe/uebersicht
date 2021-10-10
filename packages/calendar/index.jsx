@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-unresolved
 import React, {css, styled} from 'uebersicht'
 
 export const refreshFrequency = 300000 // Use ms (every 5 Minutes)

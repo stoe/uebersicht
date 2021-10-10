@@ -1,6 +1,6 @@
-import React, {styled, css} from 'uebersicht'
-
-const moment = require('moment')
+// eslint-disable-next-line import/no-unresolved
+import React, {css, styled} from 'uebersicht'
+import moment from 'moment'
 
 export const refreshFrequency = 1000 // Use ms (every seconds)
 

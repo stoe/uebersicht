@@ -3,7 +3,6 @@
 const fs = require('fs')
 const path = require('path')
 const readline = require('readline')
-
 const {google} = require('googleapis')
 const moment = require('moment')
 
@@ -56,6 +55,7 @@ function getAccessToken(oAuth2Client, callback) {
     input: process.stdin,
     output: process.stdout
   })
+  // eslint-disable-next-line i18n-text/no-en
   rl.question('Enter the code from that page here: ', code => {
     rl.close()
     oAuth2Client.getToken(code, (err, token) => {
