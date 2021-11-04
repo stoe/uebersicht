@@ -1,6 +1,6 @@
 {
   "name": "@stoe/uebersicht-simpleclock",
-  "version": "3.2.0",
+  "version": "3.3.0",
   "description": "A simple clock widget for http://tracesof.net/uebersicht",
   "keywords": [
     "uebersicht",
