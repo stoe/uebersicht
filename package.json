@@ -15,8 +15,11 @@
     "npm": ">=7"
   },
   "scripts": {
+    "format": "npx prettier --config-precedence prefer-file --write . && eslint . --fix",
+    "postinstall": "lerna bootstrap",
+    "prepare": "husky install ./.github/husky",
     "pretest": "npx eslint-config-prettier .eslintrc.json",
-    "test": "eslint ."
+    "test": "lerna run test"
   },
   "dependencies": {
     "@stoe/uebersicht-calendar": "file:packages/calendar",
@@ -32,7 +35,14 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-github": "^4.3.3",
     "eslint-plugin-react": "^7.26.1",
+    "husky": "^7.0.4",
     "lerna": "^4.0.0"
   },
-  "prettier": "@github/prettier-config"
+  "prettier": "@github/prettier-config",
+  "husky": {
+    "hooks": {
+      "pre-commit": "./.github/husky/pre-commit",
+      "pre-push": "./.github/husky/pre-push"
+    }
+  }
 }
