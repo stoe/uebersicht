@@ -5,28 +5,10 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read
+  packages: write
+
 jobs:
   publish:
-    runs-on: ubuntu-latest
-
-    permissions:
-      contents: read
-      packages: write
-
-    steps:
-      - uses: actions/checkout@v2.3.4
-
-      - uses: actions/setup-node@v2.4.1
-        with:
-          node-version: 16.x
-          registry-url: 'https://npm.pkg.github.com'
-          scope: '@stoe'
-
-      - run: |
-          npm set-script prepare ""
-          git ls-files -z . | xargs -0 git update-index --assume-unchanged
-          npm ci --omit=dev --ignore-scripts
-          git ls-files -z . | xargs -0 git update-index --assume-unchanged
-          npx lerna publish from-package --yes --registry https://npm.pkg.github.com
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    uses: stoe/policies/.github/workflows/policy-lerna-publish.yml@main
