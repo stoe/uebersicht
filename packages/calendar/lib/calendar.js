@@ -100,7 +100,7 @@ function listEvents(auth) {
 
         for (const event of _e) {
           const start = event.start.dateTime || event.start.date
-          const {htmlLink: href, status, attendees} = event
+          const {htmlLink: href, status, attendees, eventType} = event
 
           let declined = false
           let a = []
@@ -112,7 +112,7 @@ function listEvents(auth) {
             declined = a[0].responseStatus === 'declined'
           }
 
-          if (event.summary && i < 5 && !declined) {
+          if (event.summary && i < 5 && !declined && eventType !== 'focusTime') {
             const [date, time] = moment(start).format('MM/DD kk:mm').split(' ')
 
             data.push({
