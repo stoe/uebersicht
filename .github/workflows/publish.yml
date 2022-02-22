@@ -11,4 +11,4 @@ permissions:
 
 jobs:
   publish:
-    uses: stoe/policies/.github/workflows/policy-lerna-publish.yml@main
+    uses: stoe/policies/.github/workflows/policy-workspaces-publish.yml@main

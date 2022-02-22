@@ -13,19 +13,36 @@
     "url": "https://github.com/stoe"
   },
   "license": "MIT",
-  "repository": "github:stoe/uebersicht",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stoe/uebersicht.git"
+  },
   "publishConfig": {
     "access": "public"
   },
   "engines": {
-    "node": ">=14",
-    "npm": ">=7"
+    "node": ">=16",
+    "npm": ">=8"
+  },
+  "main": "index.jsx",
+  "directories": {
+    "lib": "lib"
   },
   "scripts": {
+    "format": "npx prettier --config-precedence prefer-file --write . && eslint '*.jsx' --fix",
+    "pretest": "npx eslint-config-prettier ../../.eslintrc.json",
     "test": "eslint '*.jsx'"
   },
   "dependencies": {
     "googleapis": "^95.0.0",
     "moment": "^2.29.1"
-  }
+  },
+  "devDependencies": {
+    "@github/prettier-config": "^0.0.4",
+    "eslint": "^8.9.0",
+    "eslint-config-prettier": "^8.4.0",
+    "eslint-plugin-github": "^4.3.5",
+    "eslint-plugin-react": "^7.28.0"
+  },
+  "prettier": "@github/prettier-config"
 }

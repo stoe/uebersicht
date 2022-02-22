@@ -1,44 +1,37 @@
 {
   "name": "root",
+  "workspaces": [
+    "packages/calendar",
+    "packages/calendar-private",
+    "packages/github",
+    "packages/nowplaying",
+    "packages/simpleclock",
+    "packages/worldclock"
+  ],
   "author": {
     "name": "Stefan Stölzle",
-    "email": "stefan@github.com",
+    "email": "stefan@stoelzle.me",
     "url": "https://github.com/stoe"
   },
   "license": "MIT",
-  "repository": "github:stoe/uebersicht",
+  "repository": "git+https://github.com/stoe/uebersicht.git",
   "publishConfig": {
     "access": "public"
   },
   "engines": {
-    "node": ">=14",
-    "npm": ">=7"
+    "node": ">=16",
+    "npm": ">=8"
   },
   "scripts": {
-    "format": "npx prettier --config-precedence prefer-file --write . && eslint . --fix",
-    "postinstall": "lerna bootstrap",
     "prepare": "husky install ./.github/husky",
-    "pretest": "npx eslint-config-prettier .eslintrc.json",
-    "test": "lerna run test"
-  },
-  "dependencies": {
-    "@stoe/uebersicht-calendar": "file:packages/calendar",
-    "@stoe/uebersicht-calendar-private": "file:packages/calendar-private",
-    "@stoe/uebersicht-github-contibutions": "file:packages/github",
-    "@stoe/uebersicht-nowplaying": "file:packages/nowplaying",
-    "@stoe/uebersicht-simpleclock": "file:packages/simpleclock",
-    "@stoe/uebersicht-worldclock": "file:packages/worldclock"
+    "format": "npm run format --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "publish": "npm publish --access public --workspaces"
   },
   "devDependencies": {
-    "@github/prettier-config": "^0.0.4",
-    "eslint": "^8.7.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-github": "^4.3.5",
     "eslint-plugin-react": "^7.28.0",
-    "husky": "^7.0.4",
-    "lerna": "^4.0.0"
+    "husky": "^7.0.4"
   },
-  "prettier": "@github/prettier-config",
   "husky": {
     "hooks": {
       "pre-commit": "./.github/husky/pre-commit",
