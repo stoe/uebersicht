@@ -2,13 +2,72 @@ name: Publish
 
 on:
   push:
-    branches:
-      - main
-
-permissions:
-  contents: read
-  packages: write
+    tags:
+      - 'v*.*.*'
 
 jobs:
-  publish:
-    uses: stoe/policies/.github/workflows/policy-workspaces-publish.yml@main
+  publish_npm:
+    runs-on: ubuntu-latest
+
+    concurrency:
+      group: publish-npm-${{ github.ref }}
+      cancel-in-progress: true
+
+    permissions:
+      contents: read
+      packages: write
+
+    env:
+      CI: true
+
+    steps:
+      - uses: actions/checkout@v2.4.0
+
+      - uses: actions/setup-node@v2.5.1
+        with:
+          node-version: 16
+          registry-url: 'https://registry.npmjs.org'
+          scope: '@stoe'
+
+      - name: npm install
+        run: |
+          npm set-script prepare ""
+          npm install --ignore-scripts --pure-lockfile
+          git ls-files -z . | xargs -0 git update-index --assume-unchanged
+
+      - run: npm run publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  publish_gh:
+    runs-on: ubuntu-latest
+
+    concurrency:
+      group: publish-gh-${{ github.ref }}
+      cancel-in-progress: true
+
+    permissions:
+      contents: read
+      packages: write
+
+    env:
+      CI: true
+
+    steps:
+      - uses: actions/checkout@v2.4.0
+
+      - uses: actions/setup-node@v2.5.1
+        with:
+          node-version: 16
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@stoe'
+
+      - name: npm install
+        run: |
+          npm set-script prepare ""
+          npm install --ignore-scripts --pure-lockfile
+          git ls-files -z . | xargs -0 git update-index --assume-unchanged
+
+      - run: npm run publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
