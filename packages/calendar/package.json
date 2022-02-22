@@ -29,7 +29,7 @@
     "lib": "lib"
   },
   "scripts": {
-    "format": "npx prettier --config-precedence prefer-file --write . && eslint '*.jsx' --fix",
+    "format": "npx prettier --ignore-path ../../.prettierignore --config-precedence prefer-file --write . && eslint '*.jsx' --fix",
     "pretest": "npx eslint-config-prettier ../../.eslintrc.json",
     "test": "eslint '*.jsx'"
   },
