@@ -16,4 +16,4 @@ permissions: read-all
 
 jobs:
   test:
-    uses: stoe/policies/.github/workflows/policy-lerna-test.yml@main
+    uses: stoe/policies/.github/workflows/policy-node-test.yml@main
