@@ -81,10 +81,6 @@ jobs:
     needs: [publish_gh]
     if: always()
 
-    concurrency:
-      group: delete-gh-packages-${{ github.ref }}
-      cancel-in-progress: false
-
     permissions:
       contents: read
       packages: write
