@@ -102,5 +102,5 @@ jobs:
       - uses: actions/delete-package-versions@v3
         with:
           package-name: ${{ matrix.package }}
-          min-versions-to-keep: 2
+          min-versions-to-keep: 1
           token: ${{ secrets.GITHUB_TOKEN }}
