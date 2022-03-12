@@ -71,3 +71,37 @@ jobs:
       - run: npm run publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  delete_old_packages:
+    runs-on: ubuntu-latest
+
+    needs: [publish_gh]
+    if: always()
+
+    concurrency:
+      group: delete-gh-packages-${{ github.ref }}
+      cancel-in-progress: true
+
+    permissions:
+      contents: read
+      packages: write
+
+    env:
+      CI: true
+
+    strategy:
+      matrix:
+        package:
+          - "@stoe/uebersicht-calendar"
+          - "@stoe/uebersicht-calendar-private"
+          - "@stoe/uebersicht-github"
+          - "@stoe/uebersicht-nowplaying"
+          - "@stoe/uebersicht-simpleclock"
+          - "@stoe/uebersicht-worldclock"
+
+    steps:
+      - uses: actions/delete-package-versions@v3
+        with:
+          package-name: ${{ matrix.package }}
+          min-versions-to-keep: 2
+          token: ${{ secrets.GITHUB_TOKEN }}
