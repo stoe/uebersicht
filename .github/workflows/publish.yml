@@ -80,7 +80,7 @@ jobs:
 
     concurrency:
       group: delete-gh-packages-${{ github.ref }}
-      cancel-in-progress: true
+      cancel-in-progress: false
 
     permissions:
       contents: read
