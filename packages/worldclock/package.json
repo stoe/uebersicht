@@ -13,10 +13,7 @@
     "url": "https://github.com/stoe"
   },
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/stoe/uebersicht.git"
-  },
+  "repository": "git+https://github.com/stoe/uebersicht.git",
   "publishConfig": {
     "access": "public"
   },
@@ -33,12 +30,6 @@
   "dependencies": {
     "moment-timezone": "^0.5.34"
   },
-  "devDependencies": {
-    "@github/prettier-config": "^0.0.4",
-    "eslint": "^8.9.0",
-    "eslint-config-prettier": "^8.4.0",
-    "eslint-plugin-github": "^4.3.5",
-    "eslint-plugin-react": "^7.28.0"
-  },
+  "devDependencies": {},
   "prettier": "@github/prettier-config"
 }
