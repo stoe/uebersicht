@@ -92,12 +92,12 @@ jobs:
     strategy:
       matrix:
         package:
-          - "@stoe/uebersicht-calendar"
-          - "@stoe/uebersicht-calendar-private"
-          - "@stoe/uebersicht-github"
-          - "@stoe/uebersicht-nowplaying"
-          - "@stoe/uebersicht-simpleclock"
-          - "@stoe/uebersicht-worldclock"
+          - "uebersicht-calendar"
+          - "uebersicht-calendar-private"
+          - "uebersicht-github"
+          - "uebersicht-nowplaying"
+          - "uebersicht-simpleclock"
+          - "uebersicht-worldclock"
 
     steps:
       - uses: actions/delete-package-versions@v3
