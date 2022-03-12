@@ -95,7 +95,7 @@ jobs:
           - "uebersicht-calendar-private"
           - "uebersicht-github-contibutions"
           - "uebersicht-nowplaying"
-          - "uebersicht-my-simple-clock"
+          - "uebersicht-simpleclock"
           - "uebersicht-worldclock"
 
     steps:

@@ -1,4 +1,4 @@
-# uebersicht-my-simple-clock
+# uebersicht-simpleclock
 
 > A simple clock widget for http://tracesof.net/uebersicht
 
