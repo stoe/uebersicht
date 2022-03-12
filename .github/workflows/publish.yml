@@ -93,9 +93,9 @@ jobs:
         package:
           - "uebersicht-calendar"
           - "uebersicht-calendar-private"
-          - "uebersicht-github"
+          - "uebersicht-github-contibutions"
           - "uebersicht-nowplaying"
-          - "uebersicht-simpleclock"
+          - "uebersicht-my-simple-clock"
           - "uebersicht-worldclock"
 
     steps:
