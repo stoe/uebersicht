@@ -6,7 +6,7 @@ export const refreshFrequency = 300000 // Use ms (every 5 Minutes)
 // NOTE: ⚠ Workaround to hide initial load
 export const initialState = {output: false}
 
-export const command = '/usr/local/bin/node ./calendar/lib/calendar.js'
+export const command = '/opt/homebrew/bin/node ./calendar/lib/calendar.js'
 
 export const updateState = (event, prev) => {
   if (event.error) {
