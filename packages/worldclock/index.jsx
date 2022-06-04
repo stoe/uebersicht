@@ -3,15 +3,14 @@ import React, {css, styled} from 'uebersicht'
 import moment from 'moment-timezone'
 
 const list = [
-  {city: 'San Francisco', tz: 'US/Pacific'},
-  {city: 'Salt Lake City', tz: 'US/Mountain'},
-  {city: 'Austin', tz: 'US/Central'},
-  {city: 'New York', tz: 'US/Eastern'},
-  {city: 'London', tz: 'Europe/London'},
-  {city: 'Ichenhausen', tz: 'Europe/Berlin'},
-  {city: 'Moscow', tz: 'Europe/Moscow'},
-  {city: 'Bengaluru', tz: 'Asia/Kolkata'},
-  {city: 'Sydney', tz: 'Australia/Sydney'}
+  {city: '🇺🇸 San Francisco', tz: 'US/Pacific'},
+  {city: '🇺🇸 Salt Lake City', tz: 'US/Mountain'},
+  {city: '🇺🇸 Austin', tz: 'US/Central'},
+  {city: '🇺🇸 New York', tz: 'US/Eastern'},
+  {city: '🇬🇧 London', tz: 'Europe/London'},
+  {city: '🇩🇪 Ichenhausen', tz: 'Europe/Berlin'},
+  {city: '🇮🇳 Bengaluru', tz: 'Asia/Kolkata'},
+  {city: '🇦🇺 Sydney', tz: 'Australia/Sydney'}
 ]
 
 export const refreshFrequency = 1000 // Use ms (every seconds)
