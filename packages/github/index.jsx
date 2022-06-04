@@ -81,7 +81,13 @@ export const Contributions = styled('div')`
 export const day = css`
   font: normal normal 600 0.64em ui-monospace, monospace;
   color: #323232;
-  opacity: 0.64;
+
+  @media (prefers-color-scheme: light) {
+    opacity: 0.96;
+  }
+  @media (prefers-color-scheme: dark) {
+    opacity: 0.64;
+  }
 
   margin: 0;
   margin-right: 4px;

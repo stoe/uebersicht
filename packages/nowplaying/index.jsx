@@ -80,11 +80,27 @@ export const MusicIcon = styled('svg')`
 export const trackClass = css`
   font-weight: 300;
   display: block;
-  text-shadow: 1px 2px 2px #00000064;
+
+  @media (prefers-color-scheme: light) {
+    color: #0066ff;
+    text-shadow: 1px 2px 2px #00000064;
+  }
+  @media (prefers-color-scheme: dark) {
+    color: #ebebeb;
+    text-shadow: 1px 2px 2px #1b1f2364;
+  }
 `
 
 export const artistClass = css`
-  color: #9a9a9a94;
+  @media (prefers-color-scheme: light) {
+    color: #0066ff;
+    text-shadow: 1px 2px 2px #00000064;
+  }
+  @media (prefers-color-scheme: dark) {
+    color: #ebebeb;
+    text-shadow: 1px 2px 2px #1b1f2364;
+  }
+
   font-weight: 100;
   margin-right: 0.32em;
 `
