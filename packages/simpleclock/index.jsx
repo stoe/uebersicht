@@ -21,6 +21,7 @@ export const render = () => {
 // Styling...
 export const className = css`
   font: normal normal 100 0.96em/1.28 -apple-system, Helvetica Neue;
+  transition: all 1s ease;
 
   @media (prefers-color-scheme: light) {
     color: #0066ff64;

@@ -64,6 +64,7 @@ export const render = ({items, error}) => {
 // Styling...
 export const className = css`
   font: normal normal 100 0.96em/1.28 -apple-system, Helvetica Neue;
+  transition: all 1s ease;
 
   font-weight: 100;
   left: 0.8em;
