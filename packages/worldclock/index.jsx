@@ -3,15 +3,14 @@ import React, {css, styled} from 'uebersicht'
 import moment from 'moment-timezone'
 
 const list = [
-  {city: 'San Francisco', tz: 'US/Pacific'},
-  {city: 'Salt Lake City', tz: 'US/Mountain'},
-  {city: 'Austin', tz: 'US/Central'},
-  {city: 'New York', tz: 'US/Eastern'},
-  {city: 'London', tz: 'Europe/London'},
-  {city: 'Ichenhausen', tz: 'Europe/Berlin'},
-  {city: 'Moscow', tz: 'Europe/Moscow'},
-  {city: 'Bengaluru', tz: 'Asia/Kolkata'},
-  {city: 'Sydney', tz: 'Australia/Sydney'}
+  {city: '🇺🇸 San Francisco', tz: 'US/Pacific'},
+  {city: '🇺🇸 Salt Lake City', tz: 'US/Mountain'},
+  {city: '🇺🇸 Austin', tz: 'US/Central'},
+  {city: '🇺🇸 New York', tz: 'US/Eastern'},
+  {city: '🇬🇧 London', tz: 'Europe/London'},
+  {city: '🇩🇪 Ichenhausen', tz: 'Europe/Berlin'},
+  {city: '🇮🇳 Bengaluru', tz: 'Asia/Kolkata'},
+  {city: '🇦🇺 Sydney', tz: 'Australia/Sydney'}
 ]
 
 export const refreshFrequency = 1000 // Use ms (every seconds)
@@ -51,24 +50,19 @@ export const render = () => {
 
 // Styling...
 export const className = css`
-  font: normal normal 100 0.96em/1.15 -apple-system, Helvetica Neue;
+  font: normal normal 100 0.64em/1.15 -apple-system, Helvetica Neue;
+  transition: all 1s ease;
 
   @media (prefers-color-scheme: light) {
-    color: #0066ff64;
+    color: #2f363d;
   }
   @media (prefers-color-scheme: dark) {
-    color: #ebebeb64;
+    color: #ebebeb;
   }
 
-  left: 0.8em;
+  left: 0.96em;
   top: 10em;
   min-width: 200px;
-`
-
-export const Error = styled('div')`
-  font: normal normal 100 0.96em/1.28 -apple-system, Helvetica Neue;
-  color: #9c1c23;
-  margin: 0;
 `
 
 const WorldClockContainer = styled('div')`
@@ -80,8 +74,8 @@ const WorldClockContainer = styled('div')`
 
 export const city = css`
   flex-grow: 2;
-
   font-size: 1em;
+  opacity: 0.32;
 `
 
 export const timeblock = css`
@@ -94,15 +88,6 @@ export const time = css`
   font-weight: 150;
   font-size: 1.96em;
   flex-grow: 1;
-
-  @media (prefers-color-scheme: light) {
-    color: #0066ff;
-    text-shadow: 1px 2px 2px #00000064;
-  }
-  @media (prefers-color-scheme: dark) {
-    color: #ebebeb;
-    text-shadow: 1px 2px 2px #1b1f2364;
-  }
 `
 
 export const info = css`
@@ -110,8 +95,8 @@ export const info = css`
   justify-content: space-around;
   flex-direction: column-reverse;
   flex-grow: 10;
-
   font-size: 0.6em;
+  opacity: 0.32;
 `
 
 export const date = css``

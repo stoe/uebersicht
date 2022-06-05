@@ -32,50 +32,41 @@ export const updateState = (event, prev) => {
 
 export const render = ({items, error}) => {
   if (error) {
-    return (
-      <Error>
-        Something went wrong: <strong>{String(error)}</strong>
-      </Error>
-    )
+    return <Error>Something went wrong</Error>
   }
 
   // NOTE: ⚠ Workaround to hide initial load
-  if (items) {
-    return (
-      <Calendar>
-        {items.map(({date, time, event}, idx) => (
-          <CalendarItem key={idx}>
-            <CalendarDate>{date}</CalendarDate>
-            <CalendarTime>{time === '24:00' ? 'all day' : time}</CalendarTime>
-            {time === '24:00' ? (
-              <CalendarAllDayEvent>{event}</CalendarAllDayEvent>
-            ) : (
-              <CalendarEvent>{event}</CalendarEvent>
-            )}
-          </CalendarItem>
-        ))}
-      </Calendar>
-    )
-  } else {
+  if (!items) {
     return 'loading...'
   }
+
+  return (
+    <Calendar>
+      {items.map(({date, time, event}, idx) => (
+        <CalendarItem key={idx}>
+          <CalendarDate className={time === '24:00' ? allday : ''}>{date}</CalendarDate>
+          <CalendarTime className={time === '24:00' ? allday : ''}>{time === '24:00' ? 'all day' : time}</CalendarTime>
+          <CalendarEvent className={time === '24:00' ? allday : ''}>{event}</CalendarEvent>
+        </CalendarItem>
+      ))}
+    </Calendar>
+  )
 }
 
 // Styling...
 export const className = css`
   font: normal normal 100 0.96em/1.28 -apple-system, Helvetica Neue;
+  transition: all 1s ease;
 
   font-weight: 100;
   left: 0.8em;
   bottom: 2.5em;
 
   @media (prefers-color-scheme: light) {
-    color: #0066ff;
-    text-shadow: 1px 2px 2px #00000064;
+    color: #2f363d;
   }
   @media (prefers-color-scheme: dark) {
     color: #ebebeb;
-    text-shadow: 1px 2px 2px #1b1f2364;
   }
 `
 
@@ -113,13 +104,6 @@ const CalendarEvent = styled('span')`
   white-space: nowrap;
 `
 
-const CalendarAllDayEvent = styled('span')`
-  flex-grow: 10;
-
-  @media (prefers-color-scheme: light) {
-    color: #0066ff64;
-  }
-  @media (prefers-color-scheme: dark) {
-    color: #ebebeb64;
-  }
+const allday = css`
+  opacity: 0.32;
 `
