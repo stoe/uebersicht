@@ -31,11 +31,7 @@ export const updateState = (event, prev) => {
 
 export const render = ({items, error}) => {
   if (error) {
-    return (
-      <Error>
-        Something went wrong: <strong>{error}</strong>
-      </Error>
-    )
+    return <Error>Something went wrong</Error>
   }
 
   // NOTE: ⚠ Workaround to hide initial load
@@ -59,7 +55,6 @@ export const className = css`
   font: normal normal 100 0.96em/1.28 -apple-system, Helvetica Neue;
   transition: all 1s ease;
 
-  color: #9a9a9a;
   left: 0em;
   bottom: 0em;
   width: 100vw;
@@ -81,14 +76,8 @@ export const Contributions = styled('div')`
 `
 export const day = css`
   font: normal normal 600 0.64em ui-monospace, monospace;
-  color: #323232;
-
-  @media (prefers-color-scheme: light) {
-    opacity: 0.96;
-  }
-  @media (prefers-color-scheme: dark) {
-    opacity: 0.64;
-  }
+  color: #1b1f2364;
+  opacity: 0.96;
 
   margin: 0;
   margin-right: 4px;

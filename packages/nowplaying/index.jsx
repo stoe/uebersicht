@@ -47,17 +47,22 @@ export const render = ({playing, data}) => (playing ? <div>{displayData(data)}</
 
 // Styling...
 export const className = css`
-  font: normal normal 100 0.96em/1.28 -apple-system, Helvetica Neue;
+  font: normal normal 100 1em/1.28 -apple-system, Helvetica Neue;
   transition: all 1s ease;
-  left: 0.8em;
-  top: 0.64em;
+  left: 0.6em;
+  top: 0.6em;
   min-width: 200px;
+
+  @media (prefers-color-scheme: light) {
+    color: #2f363d;
+  }
+  @media (prefers-color-scheme: dark) {
+    color: #ebebeb;
+  }
 `
 
 export const Player = styled('div')`
-  font-size: 1.5em;
   font-weight: 100;
-  color: #fff;
   margin: 0;
 `
 
@@ -73,7 +78,7 @@ export const SpotifyIcon = styled('svg')`
 `
 
 export const MusicIcon = styled('svg')`
-  color: #9a9a9a94;
+  color: #9a9a9a64;
   fill: currentColor;
   height: 0.75em;
 `
@@ -81,27 +86,9 @@ export const MusicIcon = styled('svg')`
 export const trackClass = css`
   font-weight: 300;
   display: block;
-
-  @media (prefers-color-scheme: light) {
-    color: #0066ff;
-    text-shadow: 1px 2px 2px #00000064;
-  }
-  @media (prefers-color-scheme: dark) {
-    color: #ebebeb;
-    text-shadow: 1px 2px 2px #1b1f2364;
-  }
 `
 
 export const artistClass = css`
-  @media (prefers-color-scheme: light) {
-    color: #0066ff;
-    text-shadow: 1px 2px 2px #00000064;
-  }
-  @media (prefers-color-scheme: dark) {
-    color: #ebebeb;
-    text-shadow: 1px 2px 2px #1b1f2364;
-  }
-
   font-weight: 100;
   margin-right: 0.32em;
 `
