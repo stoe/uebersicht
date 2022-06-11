@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "@octokit/graphql": "^4.8.0",
-    "dayjs": "^1.11.2"
+    "dayjs": "^1.11.3"
   },
   "devDependencies": {},
   "prettier": "@github/prettier-config"
