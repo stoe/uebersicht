@@ -1,6 +1,6 @@
 # uebersicht-github-contibutions
 
-> GitHub contibutions widget for http://tracesof.net/uebersicht
+> GitHub contribution graph widget for http://tracesof.net/uebersicht
 
 ## License
 

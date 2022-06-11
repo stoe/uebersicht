@@ -16,13 +16,17 @@ Widgets for [Übersicht](http://tracesof.net/uebersicht)
 
 _Same as [calendar](packages/calendar), but with only two lines visible_
 
-### [simpleclock](packages/simpleclock)
+### [github](packages/github)
 
-> A simple clock widget for http://tracesof.net/uebersicht
+> GitHub contribution graph widget for http://tracesof.net/uebersicht
 
 ### [nowplaying](packages/nowplaying)
 
 > A 'now playing' on Spotify/Music app widget for http://tracesof.net/uebersicht
+
+### [simpleclock](packages/simpleclock)
+
+> A simple clock widget for http://tracesof.net/uebersicht
 
 ### [worldclock](packages/worldclock)
 
