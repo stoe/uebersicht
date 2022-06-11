@@ -49,8 +49,8 @@ export const render = ({playing, data}) => (playing ? <div>{displayData(data)}</
 export const className = css`
   font: normal normal 100 1em/1.28 -apple-system, Helvetica Neue;
   transition: all 1s ease;
-  left: 0.6em;
-  top: 0.6em;
+  left: 1.1em;
+  top: 1.1em;
   min-width: 200px;
 
   @media (prefers-color-scheme: light) {

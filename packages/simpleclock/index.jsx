@@ -20,7 +20,7 @@ export const render = () => {
 
 // Styling...
 export const className = css`
-  font: normal normal 100 0.8em/1.28 -apple-system, Helvetica Neue;
+  font: normal normal 100 1.96em/1.28 -apple-system, Helvetica Neue;
   transition: all 1s ease;
 
   @media (prefers-color-scheme: light) {
@@ -30,13 +30,12 @@ export const className = css`
     color: #ebebeb;
   }
 
-  left: 0.96em;
-  top: 6em;
+  left: 0.58em;
+  top: 2.4em;
   min-width: 200px;
 `
 
 export const SimpleClock = styled('div')`
-  font-size: 2.5em;
   margin: 0;
 `
 

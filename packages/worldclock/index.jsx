@@ -50,7 +50,7 @@ export const render = () => {
 
 // Styling...
 export const className = css`
-  font: normal normal 100 0.8em/1.28 -apple-system, Helvetica Neue;
+  font: normal normal 100 1.2em/1.28 -apple-system, Helvetica Neue;
   transition: all 1s ease;
 
   @media (prefers-color-scheme: light) {
@@ -61,7 +61,7 @@ export const className = css`
   }
 
   left: 0.96em;
-  top: 10em;
+  top: 6.4em;
   min-width: 200px;
 `
 
@@ -86,7 +86,6 @@ export const timeblock = css`
 
 export const time = css`
   font-weight: 150;
-  font-size: 1.96em;
   flex-grow: 1;
 `
 
