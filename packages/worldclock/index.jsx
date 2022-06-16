@@ -50,7 +50,7 @@ export const render = () => {
 
 // Styling...
 export const className = css`
-  font: normal normal 100 1.2em/1.28 -apple-system, Helvetica Neue;
+  font: normal normal 100 1.4em/1.28 -apple-system, Helvetica Neue;
   transition: all 1s ease;
 
   @media (prefers-color-scheme: light) {
@@ -61,7 +61,7 @@ export const className = css`
   }
 
   left: 0.96em;
-  top: 6.4em;
+  top: 6em;
   min-width: 200px;
 `
 
@@ -74,7 +74,7 @@ const WorldClockContainer = styled('div')`
 
 export const city = css`
   flex-grow: 2;
-  font-size: 1em;
+  font-size: 0.64em;
   opacity: 0.32;
 `
 
@@ -94,7 +94,7 @@ export const info = css`
   justify-content: space-around;
   flex-direction: column-reverse;
   flex-grow: 10;
-  font-size: 0.6em;
+  font-size: 0.48em;
   opacity: 0.32;
 `
 
