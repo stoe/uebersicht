@@ -1,6 +1,6 @@
 {
   "name": "@stoe/uebersicht-github-contibutions",
-  "version": "4.2.2",
+  "version": "4.2.3",
   "description": "A GitHub contibutions widget for http://tracesof.net/uebersicht",
   "keywords": [
     "uebersicht",
