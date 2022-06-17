@@ -37,7 +37,7 @@ export const render = ({items, error}) => {
 
   // NOTE: ⚠ Workaround to hide initial load
   if (!items) {
-    return 'loading...'
+    return <Loading>loading...</Loading>
   }
 
   return (
@@ -71,9 +71,12 @@ export const className = css`
 `
 
 export const Error = styled('div')`
-  font: normal normal 100 0.96em/1.28 -apple-system, Helvetica Neue;
   color: #9c1c23;
   margin: 0;
+`
+
+export const Loading = styled('div')`
+  opacity: 0.32;
 `
 
 const Calendar = styled('ul')`

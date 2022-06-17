@@ -35,6 +35,10 @@ export const render = ({items, error}) => {
   }
 
   // NOTE: ⚠ Workaround to hide initial load
+  if (!items) {
+    return <Loading>loading...</Loading>
+  }
+
   if (items) {
     return (
       <Contributions>
@@ -45,8 +49,6 @@ export const render = ({items, error}) => {
         ))}
       </Contributions>
     )
-  } else {
-    return 'loading...'
   }
 }
 
@@ -55,6 +57,13 @@ export const className = css`
   font: normal normal 100 0.96em/1.28 -apple-system, Helvetica Neue;
   transition: all 1s ease;
 
+  @media (prefers-color-scheme: light) {
+    color: #2f363d;
+  }
+  @media (prefers-color-scheme: dark) {
+    color: #ebebeb;
+  }
+
   left: 0em;
   bottom: 0em;
   width: 100vw;
@@ -62,7 +71,12 @@ export const className = css`
 
 export const Error = styled('div')`
   color: #9c1c23;
-  margin: 0 0 0 2em;
+  margin: 0 0 0 0.8em;
+`
+
+export const Loading = styled('div')`
+  opacity: 0.32;
+  margin: 0 0 0.4em 0.8em;
 `
 
 export const Contributions = styled('div')`
