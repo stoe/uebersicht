@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "googleapis": "^103.0.0",
-    "moment": "^2.29.3"
+    "moment": "^2.29.4"
   },
   "devDependencies": {},
   "prettier": "@github/prettier-config"
