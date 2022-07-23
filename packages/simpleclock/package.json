@@ -28,7 +28,7 @@
     "test": "eslint '*.jsx'"
   },
   "dependencies": {
-    "moment": "^2.29.3"
+    "moment": "^2.29.4"
   },
   "devDependencies": {},
   "prettier": "@github/prettier-config"
