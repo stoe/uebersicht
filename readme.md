@@ -6,16 +6,6 @@ Widgets for [Übersicht](http://tracesof.net/uebersicht)
 
 ## Widgets
 
-### [calendar](packages/calendar)
-
-> A calendar widget for http://tracesof.net/uebersicht
-
-### [calendar-private](packages/calendar-private)
-
-> Private calendar widget for http://tracesof.net/uebersicht
-
-_Same as [calendar](packages/calendar), but with only two lines visible_
-
 ### [github](packages/github)
 
 > GitHub contribution graph widget for http://tracesof.net/uebersicht

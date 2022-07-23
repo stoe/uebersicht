@@ -1,8 +1,6 @@
 {
   "name": "root",
   "workspaces": [
-    "packages/calendar",
-    "packages/calendar-private",
     "packages/github",
     "packages/nowplaying",
     "packages/simpleclock",
