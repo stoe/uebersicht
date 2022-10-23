@@ -1,0 +1,36 @@
+{
+  "type": "module",
+  "name": "@stoe/uebersicht-vartastorage",
+  "version": "1.0.0",
+  "description": "A Varta Storage widget for http://tracesof.net/uebersicht",
+  "keywords": [
+    "uebersicht",
+    "varta-storage",
+    "smarthome"
+  ],
+  "author": {
+    "name": "Stefan Stölzle",
+    "email": "stefan@stoelzle.me",
+    "url": "https://github.com/stoe"
+  },
+  "license": "MIT",
+  "repository": "git+https://github.com/stoe/uebersicht.git",
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=16",
+    "npm": ">=8"
+  },
+  "main": "index.js",
+  "scripts": {
+    "format": "npx prettier --ignore-path ../../.prettierignore --config-precedence prefer-file --write . && eslint '*.jsx' --fix",
+    "pretest": "npx eslint-config-prettier ../../.eslintrc.json",
+    "test": "eslint '*.jsx'"
+  },
+  "dependencies": {
+    "got": "^12.5.2",
+    "node-fetch": "^3.2.10"
+  },
+  "prettier": "@github/prettier-config"
+}

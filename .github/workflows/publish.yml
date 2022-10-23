@@ -94,6 +94,7 @@ jobs:
           - "uebersicht-github-contibutions"
           - "uebersicht-nowplaying"
           - "uebersicht-simpleclock"
+          - "uebersicht-vartastorage"
           - "uebersicht-worldclock"
 
     steps:

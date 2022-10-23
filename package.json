@@ -4,6 +4,7 @@
     "packages/github",
     "packages/nowplaying",
     "packages/simpleclock",
+    "packages/vartastorage",
     "packages/worldclock"
   ],
   "author": {
