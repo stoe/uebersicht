@@ -6,7 +6,7 @@ export const refreshFrequency = 3600000 // Use ms (every hour)
 // NOTE: ⚠ Workaround to hide initial load
 export const initialState = {output: false}
 
-export const command = '/opt/homebrew/bin/node ./github/lib/github.js'
+export const command = '/opt/homebrew/bin/node --no-warnings ./github/lib/github.js'
 
 export const updateState = (event, prev) => {
   if (event.error) {
