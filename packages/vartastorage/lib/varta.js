@@ -42,34 +42,27 @@ const {user, pwd} = JSON.parse(Buffer.from(buf).toString())
       })
     })
 
-    const {
-      Betriebsstatus,
-
-      Erzeugungsleistung,
-      Energieverbrauch,
-
-      Ladezustand,
-      Ladeleistung,
-      Entladeleistung,
-
-      Netzeinspeisung,
-      Netzbezug
-    } = JSON.parse(body).Daten
+    const {Betriebsstatus, Erzeugungsleistung, Energieverbrauch, Ladezustand, Netzeinspeisung, Netzbezug} =
+      JSON.parse(body).Daten
 
     console.log(
-      JSON.stringify([
-        {name: 'Betriebsstatus', value: Betriebsstatus.Name, unit: null},
-
-        {name: 'Erzeugungsleistung', value: Erzeugungsleistung.Wert, unit: Erzeugungsleistung.Einheit},
-        {name: 'Energieverbrauch', value: Energieverbrauch.Wert, unit: Energieverbrauch.Einheit},
-
-        {name: 'Ladezustand', value: Ladezustand.Wert, unit: Ladezustand.Einheit},
-        {name: 'Ladeleistung', value: Ladeleistung.Wert, unit: Ladeleistung.Einheit},
-        {name: 'Entladeleistung', value: Entladeleistung.Wert, unit: Entladeleistung.Einheit},
-
-        {name: 'Netzeinspeisung', value: Netzeinspeisung.Wert, unit: Netzeinspeisung.Einheit},
-        {name: 'Netzbezug', value: Netzbezug.Wert, unit: Netzbezug.Einheit}
-      ])
+      JSON.stringify({
+        Betriebsstatus: Betriebsstatus.Name.toLowerCase(),
+        Erzeugungsleistung: {
+          value: parseInt(Erzeugungsleistung.Wert, 10),
+          unit: Erzeugungsleistung.Einheit
+        },
+        Ladezustand: parseInt(Ladezustand.Wert, 10),
+        Energieverbrauch: {
+          value: parseInt(Energieverbrauch.Wert, 10),
+          unit: Energieverbrauch.Einheit
+        },
+        Netz: {
+          direction: Netzeinspeisung.Wert > 0 ? 'to' : 'from',
+          value: Netzeinspeisung.Wert > 0 ? parseInt(Netzeinspeisung.Wert, 10) : parseInt(Netzbezug.Wert, 10),
+          unit: Netzeinspeisung.Wert > 0 ? Netzeinspeisung.Einheit : Netzbezug.Einheit
+        }
+      })
     )
   } catch (error) {
     console.error(error.message)
