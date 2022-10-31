@@ -56,6 +56,8 @@ const query = `query($from: DateTime!, $to: DateTime!) {
 
         if (color === '#ebedf0') {
           colors.push({color: 'transparent', count})
+        } else if (color === '#03001c') {
+          colors.push({color: '#fddf68', count})
         } else {
           colors.push({color, count})
         }
