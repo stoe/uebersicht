@@ -29,7 +29,7 @@
     "test": "eslint '*.jsx'"
   },
   "dependencies": {
-    "got": "^12.5.2"
+    "got": "^12.5.3"
   },
   "prettier": "@github/prettier-config"
 }
