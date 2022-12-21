@@ -4,8 +4,6 @@ const fs = require('fs')
 const path = require('path')
 const {graphql} = require('@octokit/graphql')
 const dayjs = require('dayjs')
-const weekday = require('dayjs/plugin/weekday')
-dayjs.extend(weekday)
 
 const CREDENTIALS_PATH = path.join(process.env.PWD, 'github/credentials.json')
 const buf = fs.readFileSync(CREDENTIALS_PATH)
@@ -33,7 +31,7 @@ const query = `query($from: DateTime!, $to: DateTime!) {
     const colors = []
 
     const now = dayjs()
-    const from = now.subtract(29, 'days').format(`YYYY-MM-DDT00:00:00`)
+    const from = now.subtract(89, 'days').format(`YYYY-MM-DDT00:00:00`)
     const to = now.format(`YYYY-MM-DDT23:59:59`)
 
     const {
