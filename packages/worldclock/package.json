@@ -1,6 +1,6 @@
 {
   "name": "@stoe/uebersicht-worldclock",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "description": "A worldclock widget for http://tracesof.net/uebersicht",
   "keywords": [
     "uebersicht",

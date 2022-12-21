@@ -1,7 +1,7 @@
 {
   "type": "module",
   "name": "@stoe/uebersicht-vartastorage",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "description": "A Varta Storage widget for http://tracesof.net/uebersicht",
   "keywords": [
     "uebersicht",
