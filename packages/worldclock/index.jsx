@@ -10,7 +10,7 @@ const list = [
   {city: '🇬🇧 London', tz: 'Europe/London'},
   {city: '🇩🇪 Ichenhausen', tz: 'Europe/Berlin'},
   {city: '🇮🇳 Bengaluru', tz: 'Asia/Kolkata'},
-  {city: '🇦🇺 Sydney', tz: 'Australia/Sydney'}
+  {city: '🇦🇺 Sydney', tz: 'Australia/Sydney'},
 ]
 
 export const refreshFrequency = 1000 // Use ms (every seconds)
@@ -30,7 +30,7 @@ export const render = () => {
       city,
       date,
       time,
-      timezone
+      timezone,
     }
   })
 

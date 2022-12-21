@@ -37,15 +37,15 @@ const query = `query($from: DateTime!, $to: DateTime!) {
     const {
       viewer: {
         contributionsCollection: {
-          contributionCalendar: {weeks}
-        }
-      }
+          contributionCalendar: {weeks},
+        },
+      },
     } = await graphql(query, {
       from,
       to,
       headers: {
-        authorization: `token ${token}`
-      }
+        authorization: `token ${token}`,
+      },
     })
 
     weeks.map(week => {

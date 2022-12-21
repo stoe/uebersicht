@@ -16,14 +16,14 @@ const {user, pwd} = JSON.parse(Buffer.from(buf).toString())
     const {
       headers: lh,
       statusCode: ls,
-      statusMessage: lst
+      statusMessage: lst,
     } = await got.get('https://www.varta-storage-portal.com/ws/app?func=login', {
       headers: {
         'Accept-Language': 'de',
         'Content-Type': 'application/x-www-form-urlencoded',
         'API-Version': 1,
-        Authorization: `Basic ${Buffer.from(`${user}:${pwd}`).toString('base64')}`
-      }
+        Authorization: `Basic ${Buffer.from(`${user}:${pwd}`).toString('base64')}`,
+      },
     })
 
     if (ls !== 200) {
@@ -35,11 +35,11 @@ const {user, pwd} = JSON.parse(Buffer.from(buf).toString())
         'Accept-Language': 'de',
         'Content-Type': 'application/json',
         'API-Version': 1,
-        'Auth-Token': lh['auth-token']
+        'Auth-Token': lh['auth-token'],
       },
       body: JSON.stringify({
-        serial: `${user}`
-      })
+        serial: `${user}`,
+      }),
     })
 
     const {Betriebsstatus, Erzeugungsleistung, Energieverbrauch, Ladezustand, Netzeinspeisung, Netzbezug} =
@@ -50,19 +50,19 @@ const {user, pwd} = JSON.parse(Buffer.from(buf).toString())
         Betriebsstatus: Betriebsstatus.Name.toLowerCase(),
         Erzeugungsleistung: {
           value: parseInt(Erzeugungsleistung.Wert, 10),
-          unit: Erzeugungsleistung.Einheit
+          unit: Erzeugungsleistung.Einheit,
         },
         Ladezustand: parseInt(Ladezustand.Wert, 10),
         Energieverbrauch: {
           value: parseInt(Energieverbrauch.Wert, 10),
-          unit: Energieverbrauch.Einheit
+          unit: Energieverbrauch.Einheit,
         },
         Netz: {
           direction: Netzeinspeisung.Wert > 0 ? 'to' : 'from',
           value: Netzeinspeisung.Wert > 0 ? parseInt(Netzeinspeisung.Wert, 10) : parseInt(Netzbezug.Wert, 10),
-          unit: Netzeinspeisung.Wert > 0 ? Netzeinspeisung.Einheit : Netzbezug.Einheit
-        }
-      })
+          unit: Netzeinspeisung.Wert > 0 ? Netzeinspeisung.Einheit : Netzbezug.Einheit,
+        },
+      }),
     )
   } catch (error) {
     console.error(error.message)

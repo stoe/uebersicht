@@ -18,7 +18,7 @@ export const updateState = (event, previousState) => {
   return playing
     ? {
         playing,
-        data: {app, track, artist, position, length}
+        data: {app, track, artist, position, length},
       }
     : {playing}
 }
