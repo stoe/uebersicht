@@ -1,0 +1,28 @@
+{
+  "name": "@stoe/uebersicht-me",
+  "version": "0.0.0-development",
+  "description": "me",
+  "main": "index.jsx",
+  "devDependencies": {},
+  "scripts": {
+    "format": "npx prettier --ignore-path ../../.prettierignore --config-precedence prefer-file --write . && eslint '*.jsx' --fix",
+    "pretest": "npx eslint-config-prettier ../../.eslintrc.json",
+    "test": "eslint '*.jsx'"
+  },
+  "prettier": "@github/prettier-config",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stoe/uebersicht.git"
+  },
+  "keywords": [
+    "uebersicht",
+    "widget",
+    "me"
+  ],
+  "author": "Stefan Stölzle <stefan@stoelzle.me> (https://github.com/stoe)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stoe/uebersicht/issues"
+  },
+  "homepage": "https://github.com/stoe/uebersicht#readme"
+}
