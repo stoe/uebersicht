@@ -10,6 +10,10 @@ Widgets for [Übersicht](http://tracesof.net/uebersicht)
 
 > GitHub contribution graph widget for http://tracesof.net/uebersicht
 
+### [me](packages/me)
+
+> Me widget for http://tracesof.net/uebersicht
+
 ### [nowplaying](packages/nowplaying)
 
 > A 'now playing' on Spotify/Music app widget for http://tracesof.net/uebersicht

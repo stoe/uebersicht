@@ -2,6 +2,7 @@
   "name": "root",
   "workspaces": [
     "packages/github",
+    "packages/me",
     "packages/nowplaying",
     "packages/simpleclock",
     "packages/vartastorage",
