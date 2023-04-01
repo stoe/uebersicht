@@ -28,7 +28,7 @@
     "test": "eslint '*.jsx'"
   },
   "dependencies": {
-    "moment-timezone": "^0.5.41"
+    "moment-timezone": "^0.5.43"
   },
   "devDependencies": {},
   "prettier": "@github/prettier-config"
