@@ -1,6 +1,6 @@
 {
   "name": "@stoe/uebersicht-worldclock",
-  "version": "5.1.0",
+  "version": "5.1.1",
   "description": "A worldclock widget for http://tracesof.net/uebersicht",
   "keywords": [
     "uebersicht",
@@ -18,8 +18,8 @@
     "access": "public"
   },
   "engines": {
-    "node": ">=16",
-    "npm": ">=8"
+    "node": ">=18",
+    "npm": ">=9"
   },
   "main": "index.js",
   "scripts": {

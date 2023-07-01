@@ -1,6 +1,6 @@
 {
   "name": "@stoe/uebersicht-github-contibutions",
-  "version": "5.1.0",
+  "version": "5.1.1",
   "description": "A GitHub contibutions widget for http://tracesof.net/uebersicht",
   "keywords": [
     "uebersicht",
@@ -19,8 +19,8 @@
     "access": "public"
   },
   "engines": {
-    "node": ">=16",
-    "npm": ">=8"
+    "node": ">=18",
+    "npm": ">=9"
   },
   "main": "index.jsx",
   "directories": {
@@ -32,8 +32,8 @@
     "test": "eslint '*.jsx'"
   },
   "dependencies": {
-    "@octokit/graphql": "^5.0.6",
-    "dayjs": "^1.11.7"
+    "@octokit/graphql": "^6.0.1",
+    "dayjs": "^1.11.8"
   },
   "devDependencies": {},
   "prettier": "@github/prettier-config"
