@@ -1,28 +1,32 @@
 {
   "name": "@stoe/uebersicht-me",
   "version": "5.1.1",
-  "description": "me",
-  "main": "index.jsx",
-  "devDependencies": {},
-  "scripts": {
-    "format": "npx prettier --ignore-path ../../.prettierignore --config-precedence prefer-file --write . && eslint '*.jsx' --fix",
-    "pretest": "npx eslint-config-prettier ../../.eslintrc.json",
-    "test": "eslint '*.jsx'"
-  },
-  "prettier": "@github/prettier-config",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/stoe/uebersicht.git"
-  },
+  "description": "A me widget for http://tracesof.net/uebersicht",
   "keywords": [
     "uebersicht",
     "widget",
     "me"
   ],
-  "author": "Stefan Stölzle <stefan@stoelzle.me> (https://github.com/stoe)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/stoe/uebersicht/issues"
+  "author": {
+    "name": "Stefan Stölzle",
+    "email": "stefan@stoelzle.me",
+    "url": "https://github.com/stoe"
   },
-  "homepage": "https://github.com/stoe/uebersicht#readme"
+  "license": "MIT",
+  "repository": "git+https://github.com/stoe/uebersicht.git",
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=18",
+    "npm": ">=9"
+  },
+  "main": "index.jsx",
+  "scripts": {
+    "format": "npx prettier --ignore-path ../../.prettierignore --config-precedence prefer-file --write . && eslint '*.jsx' --fix",
+    "pretest": "npx eslint-config-prettier ../../.eslintrc.json",
+    "test": "eslint '*.jsx'"
+  },
+  "devDependencies": {},
+  "prettier": "@github/prettier-config"
 }
