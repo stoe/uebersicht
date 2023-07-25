@@ -57,6 +57,13 @@ export const className = css`
   font:
     normal normal 100 0.96em/1.28 -apple-system,
     Helvetica Neue;
+  @media (prefers-color-scheme: light) {
+    color: #2f363d;
+  }
+  @media (prefers-color-scheme: dark) {
+    color: #ebebeb;
+  }
+
   transition: all 1s ease;
 
   left: 0em;
@@ -65,36 +72,30 @@ export const className = css`
 
 export const Error = styled('div')`
   color: #9c1c23;
-  margin: 0 0 0 0.8em;
+  margin: 0 0 0.4em 0.8em;
 `
 
 export const Loading = styled('div')`
   opacity: 0.32;
-  margin: 0 0 0.4em 0.8em;
+  margin: 0 0 0.4em 1em;
 `
 
 export const Contributions = styled('div')`
-  display: flex;
-  flex-direction: row;
   height: 2vh;
-
-  div:last-child {
-    margin: 0;
-  }
   width: 100vw;
+
+  display: flex;
+  gap: 2px;
 `
+
 export const day = css`
   font:
-    normal normal 600 0.64em ui-monospace,
+    normal normal 900 0.64em ui-monospace,
     monospace;
   color: #2f363d96;
 
-  margin: 0;
-  margin-right: 1px;
-  padding: 0;
-  flex: 1;
-
   display: flex;
+  flex: 1;
   justify-content: center;
   align-items: center;
 `
