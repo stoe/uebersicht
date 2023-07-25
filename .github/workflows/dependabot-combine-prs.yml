@@ -1,4 +1,4 @@
-name: combine dependabot prs
+name: Combine dependabot prs
 
 on:
   schedule:
