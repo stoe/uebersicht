@@ -103,7 +103,9 @@ export const render = ({items, error}) => {
 
 // Styling...
 export const className = css`
-  font: normal normal 100 1.4em/1.28 -apple-system, Helvetica Neue;
+  font:
+    normal normal 100 1.4em/1.28 -apple-system,
+    Helvetica Neue;
   transition: all 1s ease;
 
   @media (prefers-color-scheme: light) {

@@ -54,7 +54,9 @@ export const render = ({items, error}) => {
 
 // Styling...
 export const className = css`
-  font: normal normal 100 0.96em/1.28 -apple-system, Helvetica Neue;
+  font:
+    normal normal 100 0.96em/1.28 -apple-system,
+    Helvetica Neue;
   transition: all 1s ease;
 
   left: 0em;
@@ -82,7 +84,9 @@ export const Contributions = styled('div')`
   width: 100vw;
 `
 export const day = css`
-  font: normal normal 600 0.64em ui-monospace, monospace;
+  font:
+    normal normal 600 0.64em ui-monospace,
+    monospace;
   color: #2f363d96;
 
   margin: 0;

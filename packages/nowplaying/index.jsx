@@ -47,7 +47,9 @@ export const render = ({playing, data}) => (playing ? <div>{displayData(data)}</
 
 // Styling...
 export const className = css`
-  font: normal normal 100 1em/1.28 -apple-system, Helvetica Neue;
+  font:
+    normal normal 100 1em/1.28 -apple-system,
+    Helvetica Neue;
   transition: all 1s ease;
   left: 1.1em;
   top: 1.1em;
