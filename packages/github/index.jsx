@@ -57,16 +57,8 @@ export const className = css`
   font: normal normal 100 0.96em/1.28 -apple-system, Helvetica Neue;
   transition: all 1s ease;
 
-  @media (prefers-color-scheme: light) {
-    color: #2f363d;
-  }
-  @media (prefers-color-scheme: dark) {
-    color: #ebebeb;
-  }
-
   left: 0em;
   bottom: 0em;
-  width: 100vw;
 `
 
 export const Error = styled('div')`
@@ -87,19 +79,18 @@ export const Contributions = styled('div')`
   div:last-child {
     margin: 0;
   }
+  width: 100vw;
 `
 export const day = css`
   font: normal normal 600 0.64em ui-monospace, monospace;
-  color: #1b1f2364;
-  opacity: 0.96;
+  color: #2f363d96;
 
   margin: 0;
-  margin-right: 4px;
+  margin-right: 1px;
   padding: 0;
   flex: 1;
 
   display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  padding: 2px 4px;
+  justify-content: center;
+  align-items: center;
 `
