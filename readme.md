@@ -1,6 +1,6 @@
 # uebersicht
 
-[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier) [![Test](https://github.com/stoe/uebersicht/workflows/Test/badge.svg)](https://github.com/stoe/uebersicht/actions/workflows/test.yml) [![CodeQL](https://github.com/stoe/uebersicht/actions/workflows/codeql.yml/badge.svg)](https://github.com/stoe/uebersicht/actions/workflows/codeql.yml) [![Publish](https://github.com/stoe/uebersicht/actions/workflows/publish.yml/badge.svg)](https://github.com/stoe/uebersicht/actions/workflows/publish.yml)
+[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier) [![Test](https://github.com/stoe/uebersicht/workflows/Test/badge.svg)](https://github.com/stoe/uebersicht/actions/workflows/test.yml) [![CodeQL](https://github.com/stoe/uebersicht/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/stoe/uebersicht/actions/workflows/github-code-scanning/codeql) [![Publish](https://github.com/stoe/uebersicht/actions/workflows/publish.yml/badge.svg)](https://github.com/stoe/uebersicht/actions/workflows/publish.yml)
 
 Widgets for [Übersicht](http://tracesof.net/uebersicht)
 
