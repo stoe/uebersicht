@@ -27,9 +27,8 @@
     "pretest": "npx eslint-config-prettier ../../.eslintrc.json",
     "test": "eslint '*.jsx'"
   },
+  "prettier": "@github/prettier-config",
   "dependencies": {
-    "moment-timezone": "^0.5.43"
-  },
-  "devDependencies": {},
-  "prettier": "@github/prettier-config"
+    "dayjs": "^1.11.9"
+  }
 }

@@ -1,16 +1,23 @@
 // eslint-disable-next-line import/no-unresolved
 import React, {css, styled} from 'uebersicht'
-import moment from 'moment-timezone'
+import dayjs from 'dayjs'
+import utc from 'dayjs/plugin/utc'
+import timezone from 'dayjs/plugin/timezone'
+import advancedFormat from 'dayjs/plugin/advancedFormat'
+
+dayjs.extend(utc)
+dayjs.extend(timezone)
+dayjs.extend(advancedFormat)
 
 const list = [
-  {city: '🇺🇸 San Francisco', tz: 'US/Pacific'},
-  {city: '🇺🇸 Salt Lake City', tz: 'US/Mountain'},
-  {city: '🇺🇸 Austin', tz: 'US/Central'},
-  {city: '🇺🇸 New York', tz: 'US/Eastern'},
-  {city: '🇬🇧 London', tz: 'Europe/London'},
-  {city: '🇩🇪 Ichenhausen', tz: 'Europe/Berlin'},
-  {city: '🇮🇳 Bengaluru', tz: 'Asia/Kolkata'},
-  {city: '🇦🇺 Sydney', tz: 'Australia/Sydney'},
+  {location: '🇺🇸 San Francisco', z: 'US/Pacific'},
+  {location: '🇺🇸 Salt Lake City', z: 'US/Mountain'},
+  {location: '🇺🇸 Austin', z: 'US/Central'},
+  {location: '🇺🇸 New York', z: 'US/Eastern'},
+  {location: '🇬🇧 London', z: 'Europe/London'},
+  {location: '🇩🇪 Ichenhausen', z: 'Europe/Berlin'},
+  {location: '🇮🇳 Bengaluru', z: 'Asia/Kolkata'},
+  {location: '🇦🇺 Sydney', z: 'Australia/Sydney'},
 ]
 
 export const refreshFrequency = 1000 // Use ms (every seconds)
@@ -19,31 +26,29 @@ export const refreshFrequency = 1000 // Use ms (every seconds)
 export const command = dispatch => {}
 
 export const render = () => {
-  const now = moment()
+  const now = dayjs().local()
 
   const items = list.map(item => {
-    const {city, tz} = item
-
-    const [date, time, timezone] = now.tz(tz).format('DD.MM HH:mm z').split(' ')
+    const [date, time, tz] = now.tz(item.z).format('DD MMM_HH:mm_z').split('_')
 
     return {
-      city,
+      ...item,
       date,
       time,
-      timezone,
+      tz,
     }
   })
 
   return items.map(item => (
-    <WorldClockContainer key={item.city}>
-      <div className={city}>{item.city}</div>
-      <div className={timeblock}>
-        <div className={time}>{item.time}</div>
-        <div className={info}>
-          <span className={date}>{item.date}</span>
-          <span className={timezone}>{item.timezone}</span>
-        </div>
-      </div>
+    <WorldClockContainer key={item.location}>
+      <City>{item.location}</City>
+      <TimeBlock>
+        <Time>{item.time}</Time>
+        <Info>
+          <Date>{item.date}</Date>
+          <Timezone>{item.tz}</Timezone>
+        </Info>
+      </TimeBlock>
     </WorldClockContainer>
   ))
 }
@@ -51,7 +56,7 @@ export const render = () => {
 // Styling...
 export const className = css`
   font:
-    normal normal 100 1.4em/1.28 -apple-system,
+    normal normal 100 1.96em/1.28 -apple-system,
     Helvetica Neue;
   transition: all 1s ease;
 
@@ -62,44 +67,47 @@ export const className = css`
     color: #ebebeb;
   }
 
-  left: 0.96em;
-  top: 6em;
+  left: 1em;
+  top: 4em;
   min-width: 200px;
 `
 
 const WorldClockContainer = styled('div')`
+  margin-bottom: 8px;
+
   display: flex;
   flex-direction: column;
-
-  margin-bottom: 8px;
 `
 
-export const city = css`
+const City = styled('div')`
+  font-size: 0.4em;
+  opacity: 0.64;
+
   flex-grow: 2;
-  font-size: 0.64em;
-  opacity: 0.32;
 `
 
-export const timeblock = css`
+const TimeBlock = styled('div')`
+  display: inline-flex;
   flex-grow: 2;
   flex-direction: row;
-  display: inline-flex;
 `
 
-export const time = css`
-  font-weight: 150;
+const Time = styled('div')`
+  font-size: 0.64em;
+  font-weight: 400;
+
   flex-grow: 1;
 `
 
-export const info = css`
+const Info = styled('div')`
+  font-size: 0.32em;
+  opacity: 0.32;
+
   display: inline-flex;
   justify-content: space-around;
-  flex-direction: column-reverse;
+  flex-direction: column;
   flex-grow: 10;
-  font-size: 0.48em;
-  opacity: 0.32;
 `
 
-export const date = css``
-
-export const timezone = css``
+const Date = styled('span')``
+const Timezone = styled('span')``
