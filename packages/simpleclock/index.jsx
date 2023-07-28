@@ -12,8 +12,8 @@ export const render = () => {
 
   return (
     <SimpleClock>
-      <span className={time}>{myTime}</span>
-      <span className={date}>{myDate}</span>
+      <Time>{myTime}</Time>
+      <Date>{myDate}</Date>
     </SimpleClock>
   )
 }
@@ -32,7 +32,7 @@ export const className = css`
     color: #ebebeb;
   }
 
-  left: 0.58em;
+  left: 1em;
   top: 2.4em;
   min-width: 200px;
 `
@@ -41,10 +41,11 @@ export const SimpleClock = styled('div')`
   margin: 0;
 `
 
-export const time = css`
-  font-weight: 300;
+export const Time = styled('span')`
+  font-weight: 400;
 `
-export const date = css`
+
+export const Date = styled('span')`
   font-size: 0.32em;
   font-weight: 100;
   margin-left: 0.75em;
