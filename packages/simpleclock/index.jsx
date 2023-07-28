@@ -21,7 +21,7 @@ export const render = () => {
 // Styling...
 export const className = css`
   font:
-    normal normal 100 1.96em/1.28 -apple-system,
+    normal normal 400 1.96em/1.28 -apple-system,
     Helvetica Neue;
   transition: all 1s ease;
 
@@ -37,17 +37,24 @@ export const className = css`
   min-width: 200px;
 `
 
-export const SimpleClock = styled('div')`
-  margin: 0;
-`
+export const SimpleClock = styled('div')``
 
-export const Time = styled('span')`
-  font-weight: 400;
-`
+export const Time = styled('span')``
 
 export const Date = styled('span')`
   font-size: 0.32em;
   font-weight: 100;
+
+  @media (prefers-color-scheme: light) {
+    span {
+      opacity: 0.64;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    span {
+      opacity: 0.32;
+    }
+  }
+
   margin-left: 0.75em;
-  opacity: 0.32;
 `

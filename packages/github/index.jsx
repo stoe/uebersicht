@@ -55,8 +55,9 @@ export const render = ({items, error}) => {
 // Styling...
 export const className = css`
   font:
-    normal normal 100 0.96em/1.28 -apple-system,
+    normal normal 400 0.96em/1.28 -apple-system,
     Helvetica Neue;
+
   @media (prefers-color-scheme: light) {
     color: #2f363d;
   }
@@ -76,7 +77,13 @@ export const Error = styled('div')`
 `
 
 export const Loading = styled('div')`
-  opacity: 0.32;
+  @media (prefers-color-scheme: light) {
+    opacity: 0.64;
+  }
+  @media (prefers-color-scheme: dark) {
+    opacity: 0.32;
+  }
+
   margin: 0 0 0.4em 1em;
 `
 
@@ -90,7 +97,7 @@ export const Contributions = styled('div')`
 
 export const day = css`
   font:
-    normal normal 900 0.64em ui-monospace,
+    normal normal 400 0.64em ui-monospace,
     monospace;
   color: #2f363d96;
 

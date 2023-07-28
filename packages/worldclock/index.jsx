@@ -56,7 +56,7 @@ export const render = () => {
 // Styling...
 export const className = css`
   font:
-    normal normal 100 1.96em/1.28 -apple-system,
+    normal normal 400 1.96em/1.28 -apple-system,
     Helvetica Neue;
   transition: all 1s ease;
 
@@ -81,7 +81,13 @@ const WorldClockContainer = styled('div')`
 
 const City = styled('div')`
   font-size: 0.4em;
-  opacity: 0.64;
+
+  @media (prefers-color-scheme: light) {
+    opacity: 0.64;
+  }
+  @media (prefers-color-scheme: dark) {
+    opacity: 0.32;
+  }
 
   flex-grow: 2;
 `
@@ -101,7 +107,13 @@ const Time = styled('div')`
 
 const Info = styled('div')`
   font-size: 0.32em;
-  opacity: 0.32;
+
+  @media (prefers-color-scheme: light) {
+    opacity: 0.64;
+  }
+  @media (prefers-color-scheme: dark) {
+    opacity: 0.32;
+  }
 
   display: inline-flex;
   justify-content: space-around;
@@ -109,5 +121,10 @@ const Info = styled('div')`
   flex-grow: 10;
 `
 
-const Date = styled('span')``
-const Timezone = styled('span')``
+const Date = styled('span')`
+  font-weight: 100;
+`
+
+const Timezone = styled('span')`
+  font-weight: 100;
+`

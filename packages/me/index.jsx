@@ -24,7 +24,7 @@ export const render = () => {
 // Styling...
 export const className = css`
   font:
-    normal normal 100 0.96em/1.28 -apple-system,
+    normal normal 400 0.96em/1.28 -apple-system,
     Helvetica Neue;
   transition: all 1s ease;
 
@@ -47,11 +47,13 @@ export const Me = styled('div')`
   }
 
   p {
+    font-size: 0.8em;
+    font-weight: 100;
+
     display: flex;
     flex-direction: row;
     align-items: center;
 
-    font-size: 0.8em;
     margin: 0.2em 0 0 0;
     padding: 0;
 
