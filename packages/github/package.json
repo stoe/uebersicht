@@ -14,7 +14,10 @@
     "url": "https://github.com/stoe"
   },
   "license": "MIT",
-  "repository": "git+https://github.com/stoe/uebersicht.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stoe/uebersicht.git"
+  },
   "publishConfig": {
     "access": "public"
   },
