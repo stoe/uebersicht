@@ -46,15 +46,11 @@ export const Date = styled('span')`
   font-weight: 100;
 
   @media (prefers-color-scheme: light) {
-    span {
-      opacity: 0.64;
-    }
+    opacity: 0.64;
   }
   @media (prefers-color-scheme: dark) {
-    span {
-      opacity: 0.32;
-    }
+    opacity: 0.32;
   }
 
-  margin-left: 0.75em;
+  margin-left: 0.64em;
 `
