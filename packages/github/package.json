@@ -35,8 +35,8 @@
     "test": "eslint '*.jsx'"
   },
   "dependencies": {
-    "@octokit/graphql": "^7.0.1",
-    "dayjs": "^1.11.9"
+    "@octokit/graphql": "^7.0.2",
+    "dayjs": "^1.11.10"
   },
   "devDependencies": {},
   "prettier": "@github/prettier-config"

@@ -32,6 +32,6 @@
   },
   "prettier": "@github/prettier-config",
   "dependencies": {
-    "dayjs": "^1.11.9"
+    "dayjs": "^1.11.10"
   }
 }
