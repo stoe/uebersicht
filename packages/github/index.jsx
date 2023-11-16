@@ -97,7 +97,8 @@ export const Contributions = styled('div')`
 
 export const day = css`
   font:
-    normal normal 400 0.64em ui-monospace,
+    normal normal 400 0.64em 'Monaspace Argon',
+    ui-monospace,
     monospace;
   color: #2f363d96;
 
