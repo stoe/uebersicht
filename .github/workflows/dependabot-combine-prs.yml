@@ -25,7 +25,7 @@ jobs:
 
       - name: combine prs
         id: combine-prs
-        uses: github/combine-prs@8e631fc3eb9337039c61b2b89219bf2a2259a4d6
+        uses: github/combine-prs@a1b441298ab012db2ae25f7bf5fad0b7f78db9c4
         with:
           pr_title: 🤖 Combined @dependabot PRs
           github_token: ${{ steps.generate_token.outputs.token }}
