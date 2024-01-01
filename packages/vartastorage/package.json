@@ -32,7 +32,7 @@
     "test": "eslint '*.jsx'"
   },
   "dependencies": {
-    "got": "^13.0.0"
+    "got": "^14.0.0"
   },
   "prettier": "@github/prettier-config"
 }
