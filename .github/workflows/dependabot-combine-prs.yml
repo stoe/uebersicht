@@ -17,7 +17,7 @@ jobs:
 
     steps:
       - name: use app token
-        uses: peter-murray/workflow-application-token-action@8e1ba3bf1619726336414f1014e37f17fbadf1db
+        uses: peter-murray/workflow-application-token-action@dc0413987a085fa17d19df9e47d4677cf81ffef3
         id: generate_token
         with:
           application_id: ${{ secrets.APP_ID }}
