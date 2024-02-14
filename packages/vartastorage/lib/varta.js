@@ -10,6 +10,17 @@ const CREDENTIALS_PATH = join(process.env.PWD, 'vartastorage/credentials.json')
 const buf = readFileSync(CREDENTIALS_PATH)
 const {user, pwd} = JSON.parse(Buffer.from(buf).toString())
 
+const TIMEOUT_ERROR_CODES = [
+  'ETIMEDOUT',
+  'ECONNRESET',
+  'EADDRINUSE',
+  'ECONNREFUSED',
+  'EPIPE',
+  'ENOTFOUND',
+  'ENETUNREACH',
+  'EAI_AGAIN',
+]
+
 // run
 ;(async () => {
   try {
@@ -23,6 +34,9 @@ const {user, pwd} = JSON.parse(Buffer.from(buf).toString())
         'Content-Type': 'application/x-www-form-urlencoded',
         'API-Version': 1,
         Authorization: `Basic ${Buffer.from(`${user}:${pwd}`).toString('base64')}`,
+      },
+      timeout: {
+        request: 10000,
       },
     })
 
@@ -65,6 +79,10 @@ const {user, pwd} = JSON.parse(Buffer.from(buf).toString())
       }),
     )
   } catch (error) {
-    console.error(error.message)
+    if (error.code && TIMEOUT_ERROR_CODES.includes(error.code)) {
+      console.error('Varta Storage Portal request timed out')
+    } else {
+      console.error(error.message)
+    }
   }
 })()
