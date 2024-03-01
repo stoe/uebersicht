@@ -35,7 +35,7 @@
     "test": "eslint '*.jsx'"
   },
   "dependencies": {
-    "@octokit/graphql": "^7.0.2",
+    "@octokit/graphql": "^8.0.1",
     "dayjs": "^1.11.10"
   },
   "devDependencies": {},
