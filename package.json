@@ -26,7 +26,8 @@
   },
   "scripts": {
     "prepare": "husky install ./.github/husky",
-    "format": "npm run format --workspaces --if-present",
+    "format": "npx prettier --config-precedence prefer-file --write . && eslint . --fix",
+    "pretest": "npx eslint-config-prettier eslint.config.js",
     "test": "npm run test --workspaces --if-present",
     "publish": "npm publish --access public --workspaces",
     "update": "./.github/scripts/update.sh"
@@ -38,11 +39,14 @@
     "eslint-plugin-github": "^5.0.1",
     "eslint-plugin-react": "^7.34.3",
     "husky": "^9.0.11"
+    "eslint-plugin-prettier": "^5.1.3",
+    "prettier": "^3.3.2"
   },
   "husky": {
     "hooks": {
       "pre-commit": "./.github/husky/pre-commit",
       "pre-push": "./.github/husky/pre-push"
     }
-  }
+  },
+  "prettier": "@github/prettier-config"
 }

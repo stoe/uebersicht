@@ -26,12 +26,13 @@
   },
   "main": "index.js",
   "scripts": {
-    "format": "npx prettier --ignore-path ../../.prettierignore --config-precedence prefer-file --write . && eslint '*.jsx' --fix",
     "pretest": "npx eslint-config-prettier ../../.eslintrc.json",
     "test": "eslint '*.jsx'"
+    "format": "npx prettier --config-precedence prefer-file --write . && eslint . --fix",
   },
-  "prettier": "@github/prettier-config",
   "dependencies": {
     "dayjs": "^1.11.10"
   }
+  },
+  "prettier": "@github/prettier-config"
 }
