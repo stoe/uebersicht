@@ -30,8 +30,7 @@
     "prepare": "husky",
     "pretest": "npx eslint-config-prettier eslint.config.js",
     "test": "npm run test --workspaces --if-present",
-    "update": "./.github/scripts/update.sh",
-    "publish": "npm publish --provenance --access public --workspaces"
+    "update": "./.github/scripts/update.sh"
   },
   "devDependencies": {
     "@github/prettier-config": "^0.0.6",

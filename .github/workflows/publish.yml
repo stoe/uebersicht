@@ -41,7 +41,7 @@ jobs:
           git ls-files -z . | xargs -0 git update-index --assume-unchanged
 
       - name: NPM publish
-        run: npm run publish
+        run: npm publish --provenance --access public --workspaces
 
   publish_gh:
     name: Publish to GitHub
@@ -77,4 +77,4 @@ jobs:
           git ls-files -z . | xargs -0 git update-index --assume-unchanged
 
       - name: GitHub Packages publish
-        run: npm run publish
+        run: npm publish --access public --workspaces
