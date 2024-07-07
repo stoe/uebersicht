@@ -31,8 +31,7 @@
     "test": "eslint ."
   },
   "dependencies": {
-    "dayjs": "^1.11.10"
-  }
+    "dayjs": "^1.11.11"
   },
   "prettier": "@github/prettier-config"
 }
