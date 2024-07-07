@@ -1,5 +1,6 @@
 {
   "name": "root",
+  "type": "module",
   "workspaces": [
     "packages/github",
     "packages/me",
@@ -21,8 +22,8 @@
     "access": "public"
   },
   "engines": {
-    "node": ">=18",
-    "npm": ">=9"
+    "node": ">=20",
+    "npm": ">=10"
   },
   "scripts": {
     "prepare": "husky install ./.github/husky",
