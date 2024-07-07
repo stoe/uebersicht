@@ -22,14 +22,14 @@
     "access": "public"
   },
   "engines": {
-    "node": ">=18",
-    "npm": ">=9"
+    "node": ">=20",
+    "npm": ">=10"
   },
   "main": "index.jsx",
   "scripts": {
-    "format": "npx prettier --ignore-path ../../.prettierignore --config-precedence prefer-file --write . && eslint '*.jsx' --fix",
-    "pretest": "npx eslint-config-prettier ../../.eslintrc.json",
-    "test": "eslint '*.jsx'"
+    "format": "npx prettier --config-precedence prefer-file --write . && eslint . --fix",
+    "pretest": "npx eslint-config-prettier ../../.eslint.config.js",
+    "test": "eslint ."
   },
   "devDependencies": {},
   "prettier": "@github/prettier-config"

@@ -1,5 +1,6 @@
 {
   "name": "root",
+  "type": "module",
   "workspaces": [
     "packages/github",
     "packages/me",
@@ -21,28 +22,42 @@
     "access": "public"
   },
   "engines": {
-    "node": ">=18",
-    "npm": ">=9"
+    "node": ">=20",
+    "npm": ">=10"
   },
   "scripts": {
-    "prepare": "husky install ./.github/husky",
-    "format": "npm run format --workspaces --if-present",
+    "format": "npx prettier --config-precedence prefer-file --write . && eslint . --fix",
+    "prepare": "husky",
+    "pretest": "npx eslint-config-prettier eslint.config.js",
     "test": "npm run test --workspaces --if-present",
-    "publish": "npm publish --access public --workspaces",
-    "update": "./.github/scripts/update.sh"
+    "update": "./.github/scripts/update.sh",
+    "publish": "npm publish --provenance --access public --workspaces"
   },
   "devDependencies": {
     "@github/prettier-config": "^0.0.6",
-    "eslint": "^8.56.0",
+    "eslint": "^9.6.0",
     "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-github": "^5.0.1",
-    "eslint-plugin-react": "^7.34.3",
-    "husky": "^9.0.11"
+    "eslint-plugin-markdown": "^5.0.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "globals": "^15.8.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.7",
+    "prettier": "^3.3.2"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "./.github/husky/pre-commit",
-      "pre-push": "./.github/husky/pre-push"
+      "pre-commit": ".husky/pre-commit",
+      "pre-push": ".husky/pre-push"
     }
-  }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "npm run format",
+      "npm run test"
+    ],
+    "*.{json,md}": [
+      "prettier --write"
+    ]
+  },
+  "prettier": "@github/prettier-config"
 }
