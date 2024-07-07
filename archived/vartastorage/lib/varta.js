@@ -1,6 +1,5 @@
 'use strict'
 
-// eslint-disable-next-line import/no-unresolved
 import got from 'got'
 
 import {readFileSync} from 'fs'

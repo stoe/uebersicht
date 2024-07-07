@@ -26,9 +26,9 @@
   },
   "main": "index.jsx",
   "scripts": {
-    "pretest": "npx eslint-config-prettier ../../.eslintrc.json",
-    "test": "eslint '*.jsx'"
     "format": "npx prettier --config-precedence prefer-file --write . && eslint . --fix",
+    "pretest": "npx eslint-config-prettier ../../.eslint.config.js",
+    "test": "eslint ."
   },
   "devDependencies": {},
   "prettier": "@github/prettier-config"
