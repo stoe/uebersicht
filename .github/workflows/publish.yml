@@ -11,41 +11,44 @@ jobs:
     runs-on: ubuntu-latest
 
     concurrency:
-      group: publish-npm-${{ github.ref }}
+      group: ${{ github.workflow }}-npm-${{ github.ref }}
       cancel-in-progress: true
 
     permissions:
       contents: read
       packages: write
+      id-token: write
 
     env:
       CI: true
+      NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
     steps:
-      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+      - name: Checkout
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
 
-      - uses: actions/setup-node@b39b52d1213e96004bfcb1c61a8a6fa8ab84f3e8
+      - name: Setup Node.js
+        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
         with:
-          node-version: 16
+          node-version: 20
           registry-url: 'https://registry.npmjs.org'
           scope: '@stoe'
 
-      - name: npm install
+      - name: NPM config
         run: |
           npm pkg delete scripts.prepare
           npm install --ignore-scripts --pure-lockfile
           git ls-files -z . | xargs -0 git update-index --assume-unchanged
 
-      - run: npm run publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: NPM publish
+        run: npm run publish
 
   publish_gh:
     name: Publish to GitHub
     runs-on: ubuntu-latest
 
     concurrency:
-      group: publish-gh-${{ github.ref }}
+      group: ${{ github.workflow }}-gh-${{ github.ref }}
       cancel-in-progress: true
 
     permissions:
@@ -54,22 +57,24 @@ jobs:
 
     env:
       CI: true
+      NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
-      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+      - name: Checkout
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
 
-      - uses: actions/setup-node@b39b52d1213e96004bfcb1c61a8a6fa8ab84f3e8
+      - name: Setup Node.js
+        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
         with:
-          node-version: 16
+          node-version: 20
           registry-url: 'https://npm.pkg.github.com'
           scope: '@stoe'
 
-      - name: npm install
+      - name: NPM config
         run: |
           npm pkg delete scripts.prepare
           npm install --ignore-scripts --pure-lockfile
           git ls-files -z . | xargs -0 git update-index --assume-unchanged
 
-      - run: npm run publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: GitHub Packages publish
+        run: npm run publish
