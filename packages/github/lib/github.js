@@ -1,13 +1,13 @@
-'use strict'
+import fs from 'fs'
+import path from 'path'
+import {graphql} from '@octokit/graphql'
+import dayjs from 'dayjs'
+import {fileURLToPath} from 'url'
 
-const fs = require('fs')
-const path = require('path')
-const {graphql} = require('@octokit/graphql')
-const dayjs = require('dayjs')
-
-const CREDENTIALS_PATH = path.join(process.env.PWD, 'github/credentials.json')
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
+const CREDENTIALS_PATH = path.join(__dirname, '../credentials.json')
 const buf = fs.readFileSync(CREDENTIALS_PATH)
-const {token} = JSON.parse(Buffer.from(buf).toString())
+const {token} = JSON.parse(buf.toString())
 
 const query = `query($from: DateTime!, $to: DateTime!) {
   viewer {
