@@ -22,10 +22,6 @@ Widgets for [Übersicht](http://tracesof.net/uebersicht)
 
 > A simple clock widget for http://tracesof.net/uebersicht
 
-### [varta-storage](packages/vartastorage)
-
-> A [Varta Storage](https://www.varta-ag.com/storage) widget for http://tracesof.net/uebersicht
-
 ### [worldclock](packages/worldclock)
 
 > A worldclock widget for http://tracesof.net/uebersicht
