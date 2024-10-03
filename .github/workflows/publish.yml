@@ -6,75 +6,14 @@ on:
       - 'v*.*.*'
 
 jobs:
-  publish_npm:
-    name: Publish to NPM
-    runs-on: ubuntu-latest
-
-    concurrency:
-      group: ${{ github.workflow }}-npm-${{ github.ref }}
-      cancel-in-progress: true
-
+  publish:
+    uses: stoe/policies/.github/workflows/policy-workspaces-publish.yml@main
     permissions:
       contents: read
       packages: write
       id-token: write
-
-    env:
-      CI: true
-      NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
-
-      - name: Setup Node.js
-        uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b # v4.0.3
-        with:
-          node-version: 20
-          registry-url: 'https://registry.npmjs.org'
-          scope: '@stoe'
-
-      - name: NPM config
-        run: |
-          npm pkg delete scripts.prepare
-          npm install --ignore-scripts --pure-lockfile
-          git ls-files -z . | xargs -0 git update-index --assume-unchanged
-
-      - name: NPM publish
-        run: npm publish --provenance --access public --workspaces
-
-  publish_gh:
-    name: Publish to GitHub
-    runs-on: ubuntu-latest
-
-    concurrency:
-      group: ${{ github.workflow }}-gh-${{ github.ref }}
-      cancel-in-progress: true
-
-    permissions:
-      contents: read
-      packages: write
-
-    env:
-      CI: true
-      NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
-
-      - name: Setup Node.js
-        uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b # v4.0.3
-        with:
-          node-version: 20
-          registry-url: 'https://npm.pkg.github.com'
-          scope: '@stoe'
-
-      - name: NPM config
-        run: |
-          npm pkg delete scripts.prepare
-          npm install --ignore-scripts --pure-lockfile
-          git ls-files -z . | xargs -0 git update-index --assume-unchanged
-
-      - name: GitHub Packages publish
-        run: npm publish --access public --workspaces
+    with:
+      npm: true
+      gh: true
+    secrets:
+      npm_token: ${{ secrets.NPM_TOKEN }}

@@ -1,6 +1,6 @@
 {
   "name": "@stoe/uebersicht-worldclock",
-  "version": "6.0.2",
+  "version": "6.0.3",
   "description": "A worldclock widget for http://tracesof.net/uebersicht",
   "keywords": [
     "uebersicht",
@@ -31,7 +31,7 @@
     "test": "eslint ."
   },
   "dependencies": {
-    "dayjs": "^1.11.12"
+    "dayjs": "^1.11.13"
   },
   "prettier": "@github/prettier-config"
 }
