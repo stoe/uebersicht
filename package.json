@@ -34,11 +34,11 @@
   },
   "devDependencies": {
     "@github/prettier-config": "^0.0.6",
-    "eslint": "^9.11.1",
+    "eslint": "^9.14.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-markdown": "^5.1.0",
     "eslint-plugin-prettier": "^5.2.1",
-    "globals": "^15.10.0",
+    "globals": "^15.11.0",
     "husky": "^9.1.6",
     "lint-staged": "^15.2.10",
     "prettier": "^3.3.3"
