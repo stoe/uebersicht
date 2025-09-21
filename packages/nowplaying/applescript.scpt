@@ -9,6 +9,7 @@ set trackname to ""
 set artistname to ""
 -- set trackduration to 0
 -- set playerposition to 0
+set myError to ""
 
 -- set debug to {}
 
@@ -31,16 +32,23 @@ end if
 # Music
 if application musicApp is running then
 	tell application "Music"
-		if the player state is playing then
-			set applicationName to musicApp
-			set state to "playing"
-			set trackname to "" & the name of current track
-			set artistname to "" & the artist of current track
-			-- set trackduration to the (duration of current track)
-			-- set playerposition to the player position
+		try
+			if the player state is playing then
+				set applicationName to musicApp
+				set state to "playing"
+				set trackname to "" & the name of current track
+				set artistname to "" & the artist of current track
+				-- set trackduration to the (duration of current track)
+				-- set playerposition to the player position
 
-			-- set debug to (properties of current track)
-		end if
+				-- set debug to (properties of current track)
+			end if
+		on error errMsg number errNum
+			-- Music is running but no music is playing
+			set debug to {errMsg, errNum}
+
+			set myError to {errMsg, errNum}
+		end try
 	end tell
 end if
 
@@ -51,6 +59,7 @@ if state is "playing" then
 	log artistname
 	-- log playerposition
 	-- log trackduration
+	log myError
 
 	-- log debug
 end if

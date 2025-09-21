@@ -11,23 +11,50 @@ export const updateState = (event, previousState) => {
     return {...previousState, warning: `We got an error: ${event.error}`}
   }
 
-  const [, state, app, track, artist, position, length] = event.output.split('\n')
+  const [, state, app, track, artist, error] = event.output.split('\n')
+
+  if (error && error !== '{}') {
+    const [errMsg, errNum] = error.replace(/'/g, '"').trim().split(',')
+
+    return {
+      playing: true,
+      data: {
+        app: 'Error',
+        track: '',
+        artist: '',
+        error: {
+          message: errMsg,
+          number: errNum,
+        },
+      },
+    }
+  }
 
   const playing = state === 'playing'
 
   return playing
     ? {
         playing,
-        data: {app, track, artist, position, length},
+        data: {app, track, artist, error},
       }
     : {playing}
 }
 
 const truncate = input => (input.length > 42 ? `${input.substring(0, 39)}...` : input)
 
-const displayData = ({app, artist, track}) => {
+const displayData = ({app, artist, track, error}) => {
   const isSpotify = app === 'Spotify' ? 'inline' : 'none'
   const isAppleMusic = app === 'Music' ? 'inline' : 'none'
+
+  if (error && error !== '{}') {
+    return (
+      <Player>
+        <Error>
+          {error.message} ({error.number})
+        </Error>
+      </Player>
+    )
+  }
 
   return (
     <Player>
@@ -62,6 +89,12 @@ export const className = css`
   @media (prefers-color-scheme: dark) {
     color: #ebebeb;
   }
+`
+
+export const Error = styled('div')`
+  color: #9c1c23;
+  font-size: 0.8em;
+  font-weight: 200;
 `
 
 export const Player = styled('div')`
