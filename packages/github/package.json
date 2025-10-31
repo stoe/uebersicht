@@ -1,7 +1,7 @@
 {
   "name": "@stoe/uebersicht-github-contibutions",
   "type": "module",
-  "version": "6.1.0",
+  "version": "6.1.1",
   "description": "A GitHub contibutions widget for http://tracesof.net/uebersicht",
   "keywords": [
     "uebersicht",
