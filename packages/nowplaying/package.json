@@ -1,6 +1,6 @@
 {
   "name": "@stoe/uebersicht-nowplaying",
-  "version": "6.2.0",
+  "version": "6.2.1",
   "description": "A 'now playing' on Spotify/Music app widget for http://tracesof.net/uebersicht",
   "keywords": [
     "uebersicht",
