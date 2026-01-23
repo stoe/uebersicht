@@ -43,8 +43,8 @@ export const updateState = (event, previousState) => {
 const truncate = input => (input.length > 42 ? `${input.substring(0, 39)}...` : input)
 
 const displayData = ({app, artist, track, error}) => {
-  const isSpotify = app === 'Spotify' ? 'inline' : 'none'
-  const isAppleMusic = app === 'Music' ? 'inline' : 'none'
+  const isSpotify = app === 'Spotify' ? 'inline-block' : 'none'
+  const isAppleMusic = app === 'Music' ? 'inline-block' : 'none'
 
   if (error && error !== '{}') {
     return (
@@ -97,6 +97,7 @@ export const className = css`
   @media (prefers-color-scheme: light) {
     color: #101411;
   }
+
   @media (prefers-color-scheme: dark) {
     color: #f2f5f3;
   }
@@ -116,16 +117,19 @@ export const Player = styled('div')`
 `
 
 export const SpotifyIcon = styled('svg')`
+  height: 0.75em;
   color: #1ed760;
   fill: currentColor;
 
-  height: 0.75em;
+  transform: translateY(2px);
 `
 
 export const MusicIcon = styled('svg')`
   height: 0.75em;
   width: 0.75em;
   border-radius: 0.12em;
+
+  transform: translateY(2px);
 `
 
 export const Track = styled('span')`
