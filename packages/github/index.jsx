@@ -55,14 +55,15 @@ export const render = ({items, error}) => {
 // Styling...
 export const className = css`
   font:
-    normal normal 400 0.96em/1.28 -apple-system,
-    Helvetica Neue;
+    normal normal 400 0.96em/1.28 'Mona Sans',
+    -apple-system,
+    sans-serif;
 
   @media (prefers-color-scheme: light) {
-    color: #2f363d;
+    color: #101411;
   }
   @media (prefers-color-scheme: dark) {
-    color: #ebebeb;
+    color: #f2f5f3;
   }
 
   transition: all 1s ease;
@@ -72,7 +73,11 @@ export const className = css`
 `
 
 export const Error = styled('div')`
-  color: #9c1c23;
+  font:
+    normal normal 400 1em 'Monaspace Argon',
+    ui-monospace,
+    monospace;
+  color: #fe4c25;
   margin: 0 0 0.4em 0.8em;
 `
 
@@ -100,7 +105,7 @@ export const day = css`
     normal normal 400 0.64em 'Monaspace Argon',
     ui-monospace,
     monospace;
-  color: #2f363d96;
+  color: #10141196;
 
   display: flex;
   flex: 1;

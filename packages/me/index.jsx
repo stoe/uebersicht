@@ -24,16 +24,17 @@ export const render = () => {
 // Styling...
 export const className = css`
   font:
-    normal normal 400 0.96em/1.28 -apple-system,
-    Helvetica Neue;
+    normal normal 400 0.96em/1.28 'Mona Sans',
+    -apple-system,
+    sans-serif;
   transition: all 1s ease;
 
   @media (prefers-color-scheme: light) {
-    color: #2f363d;
+    color: #101411;
   }
 
   @media (prefers-color-scheme: dark) {
-    color: #ebebeb;
+    color: #f2f5f3;
   }
 
   right: 0.8em;
@@ -59,10 +60,10 @@ export const Me = styled('div')`
 
     svg {
       @media (prefers-color-scheme: light) {
-        color: #2f363d;
+        color: #101411;
       }
       @media (prefers-color-scheme: dark) {
-        color: #ebebeb;
+        color: #f2f5f3;
       }
 
       fill: currentColor;
