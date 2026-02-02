@@ -64,6 +64,7 @@ export const className = css`
   @media (prefers-color-scheme: light) {
     color: #101411;
   }
+
   @media (prefers-color-scheme: dark) {
     color: #f2f5f3;
   }
@@ -86,6 +87,7 @@ const City = styled('div')`
   @media (prefers-color-scheme: light) {
     opacity: 0.64;
   }
+
   @media (prefers-color-scheme: dark) {
     opacity: 0.32;
   }
@@ -112,6 +114,7 @@ const Info = styled('div')`
   @media (prefers-color-scheme: light) {
     opacity: 0.64;
   }
+
   @media (prefers-color-scheme: dark) {
     opacity: 0.32;
   }

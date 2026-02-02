@@ -29,6 +29,7 @@ export const className = css`
   @media (prefers-color-scheme: light) {
     color: #101411;
   }
+
   @media (prefers-color-scheme: dark) {
     color: #f2f5f3;
   }

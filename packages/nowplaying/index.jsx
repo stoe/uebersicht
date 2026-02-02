@@ -90,10 +90,6 @@ export const className = css`
     sans-serif;
   transition: all 1s ease;
 
-  left: 1em;
-  top: 0.32em;
-  min-width: 200px;
-
   @media (prefers-color-scheme: light) {
     color: #101411;
   }
@@ -101,6 +97,10 @@ export const className = css`
   @media (prefers-color-scheme: dark) {
     color: #f2f5f3;
   }
+
+  left: 1em;
+  top: 0.32em;
+  min-width: 200px;
 `
 
 export const Error = styled('div')`
