@@ -20,6 +20,10 @@ git clone https://github.com/stoe/uebersicht.git ~/.config/übersicht/widgets/ue
 
 2. Or manually copy the `packages/github` folder into your Übersicht widgets directory.
 
+Install the GitHub widget's dependencies from the repository root with `npm install`. It uses `@octokit/graphql` for API requests and native `Date` arithmetic for the contribution window.
+
+The widget runs `/opt/homebrew/bin/node`, which must provide Node.js 24+.
+
 ## Usage
 
 The widget requires a GitHub personal access token to fetch contribution data.

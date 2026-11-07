@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import {graphql} from '@octokit/graphql'
-import dayjs from 'dayjs'
+import {getContributionRange} from './dates.js'
 import {fileURLToPath} from 'url'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
@@ -30,9 +30,7 @@ const query = `query($from: DateTime!, $to: DateTime!) {
   try {
     const colors = []
 
-    const now = dayjs()
-    const from = now.subtract(89, 'days').format(`YYYY-MM-DDT00:00:00`)
-    const to = now.format(`YYYY-MM-DDT23:59:59`)
+    const {from, to} = getContributionRange(new Date())
 
     const {
       viewer: {
