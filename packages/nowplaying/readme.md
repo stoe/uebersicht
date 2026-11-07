@@ -25,11 +25,16 @@ git clone https://github.com/stoe/uebersicht.git ~/.config/übersicht/widgets/ue
 The widget uses the following design tokens:
 
 - **Font**: Mona Sans with sans-serif fallback
-- **Light mode**: #101411
-- **Dark mode**: #f2f5f3
-- **Spotify color**: #1ed760
-- **Apple Music**: Gradient #FA233B to #FB5C74
-- **Error color**: #fe4c25
+
+| Color                | Light              | Dark               |
+| -------------------- | ------------------ | ------------------ |
+| Primary              | #101411            | #f2f5f3            |
+| Secondary            | #58635b            | #a4aea6            |
+| Spotify              | #08872b            | #1ed760            |
+| Apple Music gradient | #cf2230 to #fa4549 | #fa383d to #fc5c5d |
+| Error                | #ae0b29            | #fd8986            |
+
+Text, icons, and errors follow the system appearance. The widget remains transparent.
 
 ## License
 
