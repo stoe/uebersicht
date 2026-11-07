@@ -1,13 +1,6 @@
 // eslint-disable-next-line import/no-unresolved
 import React, {css, styled} from 'uebersicht'
-import dayjs from 'dayjs'
-import utc from 'dayjs/plugin/utc'
-import timezone from 'dayjs/plugin/timezone'
-import advancedFormat from 'dayjs/plugin/advancedFormat'
-
-dayjs.extend(utc)
-dayjs.extend(timezone)
-dayjs.extend(advancedFormat)
+import {formatTime} from './lib/time.js'
 
 const list = [
   {location: '🇺🇸 San Francisco', z: 'US/Pacific'},
@@ -26,18 +19,12 @@ export const refreshFrequency = 1000 // Use ms (every seconds)
 export const command = dispatch => {}
 
 export const render = () => {
-  const now = dayjs().local()
+  const now = new globalThis.Date()
 
-  const items = list.map(item => {
-    const [date, time, tz] = now.tz(item.z).format('DD MMM_HH:mm_z').split('_')
-
-    return {
-      ...item,
-      date,
-      time,
-      tz,
-    }
-  })
+  const items = list.map(item => ({
+    ...item,
+    ...formatTime(now, item.z),
+  }))
 
   return items.map(item => (
     <WorldClockContainer key={item.location}>

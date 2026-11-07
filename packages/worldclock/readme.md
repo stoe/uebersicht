@@ -9,6 +9,11 @@
 - Supports light and dark color schemes
 - Mona Sans typography for consistent design
 - Real-time updates
+- Named timezone abbreviations with automatic daylight-saving updates
+
+The widget uses native `Date` and `Intl.DateTimeFormat` APIs for timezone conversion and formatting. No production npm dependencies are required.
+
+Configured zones display PT/PDT, MT/MDT, CT/CDT, ET/EDT, GMT/BST, CET/CEST, IST, and AEST/AEDT. US zones use two-letter labels during standard time and three-letter labels during daylight saving. Additional zones display their configured timezone identifier instead of numeric GMT offsets.
 
 ## Installation
 

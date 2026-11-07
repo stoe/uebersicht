@@ -30,8 +30,5 @@
     "pretest": "npx eslint-config-prettier ../../.eslint.config.js",
     "test": "eslint ."
   },
-  "dependencies": {
-    "dayjs": "^1.11.23"
-  },
   "prettier": "@github/prettier-config"
 }
