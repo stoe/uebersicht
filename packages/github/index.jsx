@@ -42,8 +42,17 @@ export const render = ({items, error}) => {
   if (items) {
     return (
       <Contributions>
-        {items.map(({color, count}, idx) => (
-          <div className={day} key={idx} style={{backgroundColor: `${color}`}}>
+        {items.map(({color, darkColor, count, textColor, darkTextColor}, idx) => (
+          <div
+            className={day}
+            key={idx}
+            style={{
+              '--contribution-color': color,
+              '--contribution-dark-color': darkColor,
+              '--contribution-text-color': textColor,
+              '--contribution-dark-text-color': darkTextColor,
+            }}
+          >
             &nbsp;{count}
           </div>
         ))}
@@ -105,7 +114,13 @@ export const day = css`
     normal normal 400 0.64em 'Monaspace Argon',
     ui-monospace,
     monospace;
-  color: #10141196;
+  background-color: var(--contribution-color);
+  color: var(--contribution-text-color, #10141196);
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--contribution-dark-color, var(--contribution-color));
+    color: var(--contribution-dark-text-color, var(--contribution-text-color, #10141196));
+  }
 
   display: flex;
   flex: 1;
