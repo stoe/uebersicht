@@ -53,7 +53,7 @@ export const render = ({items, error}) => {
               '--contribution-dark-text-color': darkTextColor,
             }}
           >
-            &nbsp;{count}
+            <Count>{count}</Count>
           </div>
         ))}
       </Contributions>
@@ -109,6 +109,13 @@ export const Contributions = styled('div')`
   gap: 2px;
 `
 
+export const Count = styled('span')`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`
+
 export const day = css`
   font:
     normal normal 400 0.64em 'Monaspace Argon',
@@ -122,8 +129,6 @@ export const day = css`
     color: var(--contribution-dark-text-color, var(--contribution-text-color, #10141196));
   }
 
-  display: flex;
+  position: relative;
   flex: 1;
-  justify-content: center;
-  align-items: center;
 `

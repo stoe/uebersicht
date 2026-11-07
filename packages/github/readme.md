@@ -49,7 +49,7 @@ Green is the default GitHub theme, and orange is reserved for Halloween; neither
 
 When GitHub reports `isHalloween`, every scheme uses the existing automatic Halloween colors, including the widget's orange adjustment. The selected custom theme resumes afterward.
 
-Custom-theme counts use contrasting light or solid dark text in both modes. Fourth-quartile counts retain contrast-aware text in the default and Halloween themes too.
+Custom-theme counts use contrasting light or solid dark text in both modes. Fourth-quartile counts retain contrast-aware text in the default and Halloween themes too. Counts are absolutely centered within each cell.
 
 ## Styling
 

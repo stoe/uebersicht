@@ -37,7 +37,7 @@ suite('GitHub contribution widget', () => {
     assert.equal(findElements(tree, 'span').length, 0)
   })
 
-  test('forwards paired theme colors to contribution cells', () => {
+  test('forwards paired theme colors and keeps contribution counts in their own spans', () => {
     const items = [
       {color: 'transparent', count: ''},
       {
@@ -58,7 +58,9 @@ suite('GitHub contribution widget', () => {
         '--contribution-text-color': item.textColor,
         '--contribution-dark-text-color': item.darkTextColor,
       })
-      assert.equal(textContent(cell).trim(), String(item.count))
+      const counts = findElements(cell, 'span')
+      assert.equal(counts.length, 1)
+      assert.equal(textContent(counts[0]), String(item.count))
     }
   })
 })
