@@ -24,8 +24,13 @@ git clone https://github.com/stoe/uebersicht.git ~/.config/übersicht/widgets/ue
 The widget uses the following design tokens:
 
 - **Font**: Mona Sans with sans-serif fallback
-- **Light mode**: #101411
-- **Dark mode**: #f2f5f3
+
+| Color     | Light   | Dark    |
+| --------- | ------- | ------- |
+| Primary   | #101411 | #f2f5f3 |
+| Secondary | #58635b | #58635b |
+
+Colors follow the system appearance. Secondary text and icons use opaque colors, while the widget remains transparent.
 
 ## License
 
