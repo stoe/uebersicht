@@ -81,14 +81,16 @@ All widgets share a consistent design language:
 
 ### Prerequisites
 
-- Node.js 20+
-- npm 10+
+- Node.js 24+
+- npm 12+
 
 ### Setup
 
 ```bash
 npm install
 ```
+
+With an existing fnm default that provides Node 24 and npm 12, select it with `fnm use default`. No fnm configuration changes are needed. Verify the selected versions with `node -v` and `npm -v`.
 
 ### Available Scripts
 

@@ -22,8 +22,8 @@
     "access": "public"
   },
   "engines": {
-    "node": ">=20",
-    "npm": ">=10"
+    "node": ">=24",
+    "npm": ">=12"
   },
   "main": "index.jsx",
   "scripts": {

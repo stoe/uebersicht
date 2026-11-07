@@ -22,8 +22,8 @@
     "access": "public"
   },
   "engines": {
-    "node": ">=20",
-    "npm": ">=10"
+    "node": ">=24",
+    "npm": ">=12"
   },
   "scripts": {
     "format": "npx prettier --config-precedence prefer-file --write . && eslint . --fix",
