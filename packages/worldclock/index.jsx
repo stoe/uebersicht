@@ -42,18 +42,18 @@ export const render = () => {
 
 // Styling...
 export const className = css`
+  --widget-text: #101411;
+  --widget-muted: #58635b;
+
   font:
     normal normal 400 1.96em/1.28 'Mona Sans',
     -apple-system,
     sans-serif;
-  transition: all 1s ease;
-
-  @media (prefers-color-scheme: light) {
-    color: #101411;
-  }
+  color: var(--widget-text);
+  transition: opacity 1s ease;
 
   @media (prefers-color-scheme: dark) {
-    color: #f2f5f3;
+    --widget-text: #f2f5f3;
   }
 
   left: 1em;
@@ -69,15 +69,8 @@ const WorldClockContainer = styled('div')`
 `
 
 const City = styled('div')`
+  color: var(--widget-muted);
   font-size: 0.4em;
-
-  @media (prefers-color-scheme: light) {
-    opacity: 0.64;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    opacity: 0.32;
-  }
 
   flex-grow: 2;
 `
@@ -96,15 +89,8 @@ const Time = styled('div')`
 `
 
 const Info = styled('div')`
+  color: var(--widget-muted);
   font-size: 0.32em;
-
-  @media (prefers-color-scheme: light) {
-    opacity: 0.64;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    opacity: 0.32;
-  }
 
   display: inline-flex;
   justify-content: space-around;
