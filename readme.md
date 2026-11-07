@@ -95,9 +95,9 @@ With an existing fnm default that provides Node 24 and npm 12, select it with `f
 ### Available Scripts
 
 ```bash
-npm run format    # Format code with Prettier
-npm run test      # Run ESLint checks
-npm run dev       # Development mode (if applicable)
+npm run format    # Format code with Prettier and apply ESLint fixes
+npm run lint      # Run ESLint checks
+npm run test      # Run widget tests and ESLint checks
 ```
 
 ### Code Quality

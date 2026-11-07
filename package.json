@@ -27,13 +27,15 @@
   },
   "scripts": {
     "format": "npx prettier --config-precedence prefer-file --write . && eslint . --fix",
+    "lint": "eslint .",
     "prepare": "husky",
     "pretest": "npx eslint-config-prettier eslint.config.js",
-    "test": "npm run test --workspaces --if-present",
+    "test": "npm run lint && node --test test/**/*.test.mjs",
     "update": "./.github/scripts/update.sh"
   },
   "devDependencies": {
     "@github/prettier-config": "^0.0.6",
+    "esbuild": "^0.28.2",
     "eslint": "^10.14.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-markdown": "^5.1.0",
