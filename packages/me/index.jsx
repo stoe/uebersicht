@@ -23,18 +23,18 @@ export const render = () => {
 
 // Styling...
 export const className = css`
+  --widget-text: #101411;
+  --widget-muted: #58635b;
+
   font:
     normal normal 400 0.96em/1.28 'Mona Sans',
     -apple-system,
     sans-serif;
-  transition: all 1s ease;
-
-  @media (prefers-color-scheme: light) {
-    color: #101411;
-  }
+  color: var(--widget-text);
+  transition: opacity 1s ease;
 
   @media (prefers-color-scheme: dark) {
-    color: #f2f5f3;
+    --widget-text: #f2f5f3;
   }
 
   right: 0.8em;
@@ -48,6 +48,7 @@ export const Me = styled('div')`
   }
 
   p {
+    color: var(--widget-muted);
     font-size: 0.8em;
     font-weight: 100;
 
@@ -59,20 +60,11 @@ export const Me = styled('div')`
     padding: 0;
 
     svg {
-      @media (prefers-color-scheme: light) {
-        color: #101411;
-      }
-      @media (prefers-color-scheme: dark) {
-        color: #f2f5f3;
-      }
-
       fill: currentColor;
       height: 1em;
 
       margin-right: 0.4em;
       margin-top: 0.1em;
-
-      opacity: 0.32;
     }
   }
 `

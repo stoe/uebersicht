@@ -9,6 +9,8 @@
 - Mona Sans typography for consistent design
 - Minimal and clean appearance
 
+The widget formats local dates and times with the native `Date` API. No production npm dependencies are required.
+
 ## Installation
 
 1. Clone this repository into your Übersicht widgets folder:
@@ -24,8 +26,13 @@ git clone https://github.com/stoe/uebersicht.git ~/.config/übersicht/widgets/ue
 The widget uses the following design tokens:
 
 - **Font**: Mona Sans with sans-serif fallback
-- **Light mode**: #101411
-- **Dark mode**: #f2f5f3
+
+| Color     | Light   | Dark    |
+| --------- | ------- | ------- |
+| Primary   | #101411 | #f2f5f3 |
+| Secondary | #58635b | #a4aea6 |
+
+Colors follow the system appearance. The date uses an opaque secondary color, while the widget remains transparent.
 
 ## License
 

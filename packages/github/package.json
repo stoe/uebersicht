@@ -23,21 +23,15 @@
     "access": "public"
   },
   "engines": {
-    "node": ">=20",
-    "npm": ">=10"
+    "node": ">=24",
+    "npm": ">=12"
   },
   "main": "index.jsx",
   "directories": {
     "lib": "lib"
   },
-  "scripts": {
-    "format": "npx prettier --config-precedence prefer-file --write . && eslint . --fix",
-    "pretest": "npx eslint-config-prettier ../../.eslint.config.js",
-    "test": "eslint ."
-  },
   "dependencies": {
-    "@octokit/graphql": "^9.0.5",
-    "dayjs": "^1.11.23"
+    "@octokit/graphql": "^9.0.5"
   },
   "devDependencies": {},
   "prettier": "@github/prettier-config"

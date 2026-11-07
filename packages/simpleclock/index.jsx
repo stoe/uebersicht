@@ -1,6 +1,6 @@
 // eslint-disable-next-line import/no-unresolved
 import React, {css, styled} from 'uebersicht'
-import moment from 'moment'
+import {formatTime} from './lib/time.js'
 
 export const refreshFrequency = 1000 // Use ms (every seconds)
 
@@ -8,7 +8,7 @@ export const refreshFrequency = 1000 // Use ms (every seconds)
 export const command = dispatch => {}
 
 export const render = () => {
-  const [myDate, myTime] = moment().format('DD.MM.YYYY HH:mm').split(' ')
+  const {date: myDate, time: myTime} = formatTime(new globalThis.Date())
 
   return (
     <SimpleClock>
@@ -20,18 +20,18 @@ export const render = () => {
 
 // Styling...
 export const className = css`
+  --widget-text: #101411;
+  --widget-muted: #58635b;
+
   font:
     normal normal 400 1.96em/1.28 'Mona Sans',
     -apple-system,
     sans-serif;
-  transition: all 1s ease;
-
-  @media (prefers-color-scheme: light) {
-    color: #101411;
-  }
+  color: var(--widget-text);
+  transition: opacity 1s ease;
 
   @media (prefers-color-scheme: dark) {
-    color: #f2f5f3;
+    --widget-text: #f2f5f3;
   }
 
   left: 1em;
@@ -44,15 +44,9 @@ export const SimpleClock = styled('div')``
 export const Time = styled('span')``
 
 export const Date = styled('span')`
+  color: var(--widget-muted);
   font-size: 0.32em;
   font-weight: 100;
-
-  @media (prefers-color-scheme: light) {
-    opacity: 0.64;
-  }
-  @media (prefers-color-scheme: dark) {
-    opacity: 0.32;
-  }
 
   margin-left: 0.64em;
 `

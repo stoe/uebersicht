@@ -42,9 +42,18 @@ export const render = ({items, error}) => {
   if (items) {
     return (
       <Contributions>
-        {items.map(({color, count}, idx) => (
-          <div className={day} key={idx} style={{backgroundColor: `${color}`}}>
-            &nbsp;{count}
+        {items.map(({color, darkColor, count, textColor, darkTextColor}, idx) => (
+          <div
+            className={day}
+            key={idx}
+            style={{
+              '--contribution-color': color,
+              '--contribution-dark-color': darkColor,
+              '--contribution-text-color': textColor,
+              '--contribution-dark-text-color': darkTextColor,
+            }}
+          >
+            <Count>{count}</Count>
           </div>
         ))}
       </Contributions>
@@ -100,15 +109,26 @@ export const Contributions = styled('div')`
   gap: 2px;
 `
 
+export const Count = styled('span')`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`
+
 export const day = css`
   font:
     normal normal 400 0.64em 'Monaspace Argon',
     ui-monospace,
     monospace;
-  color: #10141196;
+  background-color: var(--contribution-color);
+  color: var(--contribution-text-color, #10141196);
 
-  display: flex;
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--contribution-dark-color, var(--contribution-color));
+    color: var(--contribution-dark-text-color, var(--contribution-text-color, #10141196));
+  }
+
+  position: relative;
   flex: 1;
-  justify-content: center;
-  align-items: center;
 `

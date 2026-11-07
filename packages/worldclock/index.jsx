@@ -1,13 +1,6 @@
 // eslint-disable-next-line import/no-unresolved
 import React, {css, styled} from 'uebersicht'
-import dayjs from 'dayjs'
-import utc from 'dayjs/plugin/utc'
-import timezone from 'dayjs/plugin/timezone'
-import advancedFormat from 'dayjs/plugin/advancedFormat'
-
-dayjs.extend(utc)
-dayjs.extend(timezone)
-dayjs.extend(advancedFormat)
+import {formatTime} from './lib/time.js'
 
 const list = [
   {location: '🇺🇸 San Francisco', z: 'US/Pacific'},
@@ -26,18 +19,12 @@ export const refreshFrequency = 1000 // Use ms (every seconds)
 export const command = dispatch => {}
 
 export const render = () => {
-  const now = dayjs().local()
+  const now = new globalThis.Date()
 
-  const items = list.map(item => {
-    const [date, time, tz] = now.tz(item.z).format('DD MMM_HH:mm_z').split('_')
-
-    return {
-      ...item,
-      date,
-      time,
-      tz,
-    }
-  })
+  const items = list.map(item => ({
+    ...item,
+    ...formatTime(now, item.z),
+  }))
 
   return items.map(item => (
     <WorldClockContainer key={item.location}>
@@ -55,18 +42,18 @@ export const render = () => {
 
 // Styling...
 export const className = css`
+  --widget-text: #101411;
+  --widget-muted: #58635b;
+
   font:
     normal normal 400 1.96em/1.28 'Mona Sans',
     -apple-system,
     sans-serif;
-  transition: all 1s ease;
-
-  @media (prefers-color-scheme: light) {
-    color: #101411;
-  }
+  color: var(--widget-text);
+  transition: opacity 1s ease;
 
   @media (prefers-color-scheme: dark) {
-    color: #f2f5f3;
+    --widget-text: #f2f5f3;
   }
 
   left: 1em;
@@ -82,15 +69,8 @@ const WorldClockContainer = styled('div')`
 `
 
 const City = styled('div')`
+  color: var(--widget-muted);
   font-size: 0.4em;
-
-  @media (prefers-color-scheme: light) {
-    opacity: 0.64;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    opacity: 0.32;
-  }
 
   flex-grow: 2;
 `
@@ -109,15 +89,8 @@ const Time = styled('div')`
 `
 
 const Info = styled('div')`
+  color: var(--widget-muted);
   font-size: 0.32em;
-
-  @media (prefers-color-scheme: light) {
-    opacity: 0.64;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    opacity: 0.32;
-  }
 
   display: inline-flex;
   justify-content: space-around;

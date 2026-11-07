@@ -22,26 +22,30 @@
     "access": "public"
   },
   "engines": {
-    "node": ">=20",
-    "npm": ">=10"
+    "node": ">=24",
+    "npm": ">=12"
   },
   "scripts": {
     "format": "npx prettier --config-precedence prefer-file --write . && eslint . --fix",
+    "lint": "eslint .",
     "prepare": "husky",
     "pretest": "npx eslint-config-prettier eslint.config.js",
-    "test": "npm run test --workspaces --if-present",
-    "update": "./.github/scripts/update.sh"
+    "test": "npm run lint && node --test test/**/*.test.mjs"
   },
   "devDependencies": {
     "@github/prettier-config": "^0.0.6",
+    "esbuild": "^0.28.2",
     "eslint": "^10.14.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-markdown": "^5.1.0",
     "eslint-plugin-prettier": "^5.5.7",
-    "globals": "^17.14.0",
+    "globals": "^17.13.0",
     "husky": "^9.1.7",
     "lint-staged": "^17.6.0",
     "prettier": "^3.9.10"
+  },
+  "overrides": {
+    "minimatch": "^11.0.1"
   },
   "husky": {
     "hooks": {

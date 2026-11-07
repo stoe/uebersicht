@@ -66,8 +66,8 @@ const displayData = ({app, artist, track, error}) => {
       <MusicIcon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 361 361" display={isAppleMusic}>
         <defs>
           <linearGradient id="musicGradient" x1="180" y1="358.6" x2="180" y2="7.76">
-            <stop offset="0%" stopColor="#FA233B" />
-            <stop offset="100%" stopColor="#FB5C74" />
+            <stop offset="0%" style={{stopColor: 'var(--widget-music-start)'}} />
+            <stop offset="100%" style={{stopColor: 'var(--widget-music-end)'}} />
           </linearGradient>
         </defs>
         <rect width="361" height="361" rx="80.5" fill="url(#musicGradient)" />
@@ -84,18 +84,26 @@ export const render = ({playing, data}) => (playing ? <div>{displayData(data)}</
 
 // Styling...
 export const className = css`
+  --widget-text: #101411;
+  --widget-muted: #58635b;
+  --widget-danger: #ae0b29;
+  --widget-spotify: #08872b;
+  --widget-music-start: #cf2230;
+  --widget-music-end: #fa4549;
+
   font:
     normal normal 400 1.96em/1.28 'Mona Sans',
     -apple-system,
     sans-serif;
-  transition: all 1s ease;
-
-  @media (prefers-color-scheme: light) {
-    color: #101411;
-  }
+  color: var(--widget-text);
+  transition: opacity 1s ease;
 
   @media (prefers-color-scheme: dark) {
-    color: #f2f5f3;
+    --widget-text: #f2f5f3;
+    --widget-danger: #fd8986;
+    --widget-spotify: #1ed760;
+    --widget-music-start: #fa383d;
+    --widget-music-end: #fc5c5d;
   }
 
   left: 1em;
@@ -108,7 +116,7 @@ export const Error = styled('div')`
     normal normal 200 0.8em 'Monaspace Argon',
     ui-monospace,
     monospace;
-  color: #fe4c25;
+  color: var(--widget-danger);
 `
 
 export const Player = styled('div')`
@@ -118,7 +126,7 @@ export const Player = styled('div')`
 
 export const SpotifyIcon = styled('svg')`
   height: 0.75em;
-  color: #1ed760;
+  color: var(--widget-spotify);
   fill: currentColor;
 
   transform: translateY(2px);
@@ -137,6 +145,7 @@ export const Track = styled('span')`
 `
 
 export const Artist = styled('span')`
+  color: var(--widget-muted);
   font-weight: 100;
 
   margin-right: 0.32em;

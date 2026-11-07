@@ -81,8 +81,10 @@ All widgets share a consistent design language:
 
 ### Prerequisites
 
-- Node.js 20+
-- npm 10+
+- Node.js 24+
+- npm 12+
+
+The clock widgets use native `Date` and `Intl` APIs instead of date libraries. The GitHub widget retains `@octokit/graphql` for API requests.
 
 ### Setup
 
@@ -90,12 +92,16 @@ All widgets share a consistent design language:
 npm install
 ```
 
+With an existing fnm default that provides Node 24 and npm 12, select it with `fnm use default`. No fnm configuration changes are needed. Verify the selected versions with `node -v` and `npm -v`.
+
 ### Available Scripts
 
+Run these commands from the repository root. Workspace packages share the root tooling and have no package-level scripts.
+
 ```bash
-npm run format    # Format code with Prettier
-npm run test      # Run ESLint checks
-npm run dev       # Development mode (if applicable)
+npm run format    # Format code with Prettier and apply ESLint fixes
+npm run lint      # Run ESLint checks
+npm run test      # Run widget tests and ESLint checks
 ```
 
 ### Code Quality
