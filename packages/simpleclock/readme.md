@@ -9,6 +9,8 @@
 - Mona Sans typography for consistent design
 - Minimal and clean appearance
 
+The widget formats local dates and times with the native `Date` API. No production npm dependencies are required.
+
 ## Installation
 
 1. Clone this repository into your Übersicht widgets folder:

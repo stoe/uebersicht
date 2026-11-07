@@ -30,9 +30,6 @@
     "pretest": "npx eslint-config-prettier ../../.eslint.config.js",
     "test": "eslint ."
   },
-  "dependencies": {
-    "moment": "^2.31.0"
-  },
   "devDependencies": {},
   "prettier": "@github/prettier-config"
 }

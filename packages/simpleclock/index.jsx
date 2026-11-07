@@ -1,6 +1,6 @@
 // eslint-disable-next-line import/no-unresolved
 import React, {css, styled} from 'uebersicht'
-import moment from 'moment'
+import {formatTime} from './lib/time.js'
 
 export const refreshFrequency = 1000 // Use ms (every seconds)
 
@@ -8,7 +8,7 @@ export const refreshFrequency = 1000 // Use ms (every seconds)
 export const command = dispatch => {}
 
 export const render = () => {
-  const [myDate, myTime] = moment().format('DD.MM.YYYY HH:mm').split(' ')
+  const {date: myDate, time: myTime} = formatTime(new globalThis.Date())
 
   return (
     <SimpleClock>
